@@ -79,7 +79,10 @@
                 </div>
             @endif
 
-            <div class="content">
+            <main class="py-4">
+            @yield('content')
+            </main>
+            <!-- <div class="content">
                 <div class="title m-b-md">
                     Laravel
                 </div>
@@ -94,7 +97,7 @@
                     <a href="https://vapor.laravel.com">Vapor</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
-            </div>
+            </div> -->
         </div>
     </body>
 </html>
