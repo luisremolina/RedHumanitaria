@@ -18,3 +18,5 @@ Route::get('/Sobre-Nosotros', 'InicioController@about')->name('about');
 Route::get('/donacion', 'DonacionController@index')->name('donacion');
 
 Route::post('/donacion/guardar', 'DonacionController@guardar_donacion')->name('donacion.guardar');
+
+Route::resource('post', 'Dashboard\PostController');

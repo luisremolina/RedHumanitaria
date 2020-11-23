@@ -96,7 +96,8 @@
         </div>
     </footer>
 
-   
+    <script src="{{asset('web/js/jquery.js')}}"></script>
+    <script src="{{asset('web/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('web/js/jquery.prettyPhoto.js')}}"></script>
     <script src="{{asset('web/js/owl.carousel.min.js')}}"></script>
     <script src="{{asset('web/js/jquery.isotope.min.js')}}"></script>
