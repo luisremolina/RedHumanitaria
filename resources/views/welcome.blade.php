@@ -16,15 +16,12 @@
     <link href="{{asset('web/css/main.css')}}" rel="stylesheet">
     <link href="{{asset('web/css/responsive.css')}}" rel="stylesheet">
     <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144"
-        href="{{asset('web/images/ico/apple-touch-icon-144-precomposed.png')}}">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114"
-        href="{{asset('web/images/ico/apple-touch-icon-114-precomposed.png')}}">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72"
-        href="{{asset('web/images/ico/apple-touch-icon-72-precomposed.png')}}">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{asset('web/images/ico/apple-touch-icon-144-precomposed.png')}}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{asset('web/images/ico/apple-touch-icon-114-precomposed.png')}}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{asset('web/images/ico/apple-touch-icon-72-precomposed.png')}}">
     <link rel="apple-touch-icon-precomposed" href="{{asset('web/images/ico/apple-touch-icon-57-precomposed.png')}}">
-
-    <!-- Fonts -->
+  
+     {{-- fonts --}}
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
     <!-- Styles -->
@@ -49,9 +46,9 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class=""><a href="/">Inicio</a></li>
-                        <li><a href="/donacion">Donar</a></li>
-                        <li><a href="/servicios">Servicios</a></li>
-                        <li><a href="/nosotros">Sobre Nosotros</a></li>
+                        <li><a href="{{route('donacion')}}">Donar</a></li>
+                        <li><a href="{{route('servicios')}}">Servicios</a></li>
+                        <li><a href="{{route('about')}}">Sobre Nosotros</a></li>
                         @if (Route::has('login'))
 
                         @auth
@@ -89,8 +86,9 @@
                 <div class="col-sm-6">
                     <ul class="pull-right">
                         <li><a href="/">Volver al Inicio</a></li>
-                        <li><a href="#">Servicios</a></li>
-                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="{{route('donacion')}}">Donar</a></li>
+                        <li><a href="{{route('servicios')}}">Servicios</a></li>
+                        <li><a href="{{route('about')}}">Sobre Nosotros</a></li>
 
                     </ul>
                 </div>
@@ -98,12 +96,12 @@
         </div>
     </footer>
 
-    <script src="{{asset('web/js/jquery.js')}}"></script>
-    <script src="{{asset('web/js/bootstrap.min.js')}}"></script>
+   
     <script src="{{asset('web/js/jquery.prettyPhoto.js')}}"></script>
     <script src="{{asset('web/js/owl.carousel.min.js')}}"></script>
     <script src="{{asset('web/js/jquery.isotope.min.js')}}"></script>
     <script src="{{asset('web/js/main.js')}}"></script>
+    <script src="{{asset('web/js/all.js')}}"></script>
 </body>
 
-</html>
+{{-- </html> --}}

@@ -10,4 +10,12 @@ class InicioController extends Controller
     {
         return view('inicio');
     }
+    public function about()
+    {
+        return view('pagina-main/sobre-nosotros');
+    }
+    public function services()
+    {
+        return view('pagina-main/servicios');
+    }
 }
