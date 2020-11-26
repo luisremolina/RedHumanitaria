@@ -31,7 +31,7 @@ class CreateUsersTable extends Migration
     }
 
     /**
-     * Reverse the migrations.
+     * Reverse the migrations. composer update, npm i, php artisan migrate
      *
      * @return void
      */

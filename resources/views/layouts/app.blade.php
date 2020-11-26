@@ -10,15 +10,14 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet">
+    <link href="{{asset('web/css/font-awesome.min.css')}}" rel="stylesheet">
 
 </head>
 
@@ -62,14 +61,17 @@
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-                                @if (auth()->user()->isAdmin())
-                                    <a href="/" class="dropdown-item">Registrar Caminante</a> 
+                                @if(auth()->user()->isAdmin())
 
-                                    <a href="/" class="dropdown-item">Usuarios Registrados </a>    
+                                <a href="{{ route('usuarios') }}" class="dropdown-item">Registrar Caminante</a>
 
-                                    <a href="/" class="dropdown-item">Registrar Inventario</a>    
+                                <a href="{{ route('usuarios.registrados') }}" class="dropdown-item">Usuarios Registrados
+                                </a>
 
-                                    <a href="/" class="dropdown-item">Crear kit</a>   
+                                <a href="{{ route('inventario') }}" class="dropdown-item">Registrar Inventario</a>
+
+                                <a href="{{ route('kit') }}" class="dropdown-item">Crear kit</a>
+
                                 @endif
 
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -81,17 +83,39 @@
                                     @csrf
                                 </form>
                             </div>
+
                         </li>
                         @endguest
                     </ul>
                 </div>
             </div>
         </nav>
-
+        @if (session ('flash'))
+        <div>
+            <div class="alert alert-success" role="alert">
+                <strong>AVISO</strong> {{session('flash')}}
+                <button type="button" class="close" data-dismiss="alert" alert-label="Close">
+                    <span aria-hidden="true"> &times; </span>
+                </button>
+            </div>
+        </div>
+        @endif
         <main class="py-4">
             @yield('content')
         </main>
     </div>
 </body>
+<!-- Scripts -->
+<script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ asset('js/select2.min.js') }}"></script>
+<script>
+    $(document).ready(function() {
+        $('.tipo_kit').select2({
+            tags: true,
+            tokenSeparators: [','],
+            maximumSelectionLength: 4
+        });
+    });
+</script>
 
 </html>
