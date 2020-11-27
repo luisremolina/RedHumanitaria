@@ -8,7 +8,7 @@ class InicioController extends Controller
 {
     public function index()
     {
-        return view('inicio');
+        return view('pagina-main/inicio');
     }
     public function about()
     {

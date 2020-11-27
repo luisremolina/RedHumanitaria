@@ -7,7 +7,10 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+// route::get('/', 'main-page\InicioController@index')->name('inicio');
+
 route::get('/', 'InicioController@index')->name('inicio');
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 

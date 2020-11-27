@@ -28,8 +28,8 @@ class UserController extends Controller
     public function guardar_usuario(Request $request){
 
         $request->validate([
+            'dni' => 'required',
             'nombres' => 'required',
-            'apellidos' => 'required',
             'sexo'=> 'required',
             'telefono'=> 'required',
             'edad' => 'required',
@@ -39,8 +39,8 @@ class UserController extends Controller
 
         $usuario = new User;
 
+        $usuario->dni = $request->dni;
         $usuario->nombres = $request->nombres;
-        $usuario->apellidos = $request->apellidos;
         $usuario->sexo = $request->sexo;
         $usuario->telefono = $request->telefono;
         $usuario->edad = $request->edad;

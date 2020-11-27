@@ -9,7 +9,7 @@ class InventarioController extends Controller
 {
     public function formulario_inventario(){
 
-        return view('inventario.crear');
+        return view('dashboard.inventario.crear');
     }
 
     public function guardar_inventario(Request $request){
@@ -27,13 +27,13 @@ class InventarioController extends Controller
     public function tabla_inventarios(){
 
         $inventario = Inventario::all();        
-        return view('inventario.tabla', compact("inventario"));
+        return view('dashboard.inventario.tabla', compact("inventario"));
     }
 
     public function editar(Request $request){
         
         $inventario = Inventario::where('id',$request->id)->firstOrFail();
-        return view('inventario.editar',compact("inventario"));
+        return view('dashboard.inventario.editar',compact("inventario"));
     }
 
     public function actualizar(Request $request){
