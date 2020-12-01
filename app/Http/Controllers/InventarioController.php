@@ -26,7 +26,7 @@ class InventarioController extends Controller
 
     public function tabla_inventarios(){
 
-        $inventario = Inventario::all();        
+        $inventario = Inventario::paginate(1);        
         return view('dashboard.inventario.tabla', compact("inventario"));
     }
 

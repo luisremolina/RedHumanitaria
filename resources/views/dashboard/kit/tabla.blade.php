@@ -41,5 +41,6 @@
 
             </div>
         </div>
+        {{ $kit->links() }}
     </div>
 @endsection

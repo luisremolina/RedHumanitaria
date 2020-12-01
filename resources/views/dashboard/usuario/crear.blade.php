@@ -3,7 +3,7 @@
 @section('content')
    
   
-    {{-- @include('alerta') --}}
+
         <div class="row justify-content-center">
             <div class="col-8">
                 @if (count($errors) > 0)
@@ -27,7 +27,9 @@
                             <input required id="dni" type="text" class="form-control" name="dni" autofocus>
 
                         </div>
-                        <div><a href="/"><i class="fa fa-search"></i></a></div>
+                    <div><a href="/"><i class="fa fa-search"></i></a></div>
+                   
+
                     </div>
 
                     <div class="form-group row">

@@ -42,5 +42,6 @@
               </table>            
             </div>
         </div>
+            {{ $inventario->links() }}
     </div>
 @endsection

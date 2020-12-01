@@ -27,7 +27,7 @@ class KitController extends Controller
     }
 
     public function tabla_kit(){
-        $kit = Tipo_kit::all();
+        $kit = Tipo_kit::paginate(1);
        
         return view('dashboard.kit.tabla', compact("kit"));
     }

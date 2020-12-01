@@ -14,7 +14,7 @@
                         <div class="form-group row">
                             <label for="dni" class="col-md-4 col-form-label text-md-right">{{ __('DNI') }}</label>
 
-                            <div class="col-md-5">
+                            <div class="col-md-6">
                                 <input id="dni" type="number" class="form-control @error('dni') is-invalid @enderror" name="dni" value="{{ old('dni') }}" required autocomplete="dni" autofocus>
 
                                 @error('dni')
@@ -23,7 +23,7 @@
                                     </span>
                                 @enderror
                             </div>
-                            <div><a href="/"><i class="fa fa-search"></i></a></div>
+                            {{-- <div><a href="/"><i class="fa fa-search"></i></a></div> --}}
                         </div>
 
                         <div class="form-group row">
