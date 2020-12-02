@@ -68,3 +68,19 @@ Route::get('/kit/{id}/editar', 'KitController@editar_kit')->name('kit.editar');
 Route::post('/actualizar/kit/{id}', 'KitController@actualizar_kit')->name('kit.actualizar');
 
 Route::post('/kit/{id}/eliminar', 'KitController@elimininar_kit')->name('kit.eliminar');
+
+////////////////////////////////// RUTAS DE PRODUCTOS ///////////////////////////////
+
+Route::get('/producto', 'ProductController@index')->name('producto');
+
+Route::post('/producto/guardar', 'ProductController@create')->name('producto.guardar');
+
+Route::get('/producto/registrados', 'ProductController@tabla_producto')->name('producto.registrados');
+
+Route::get('/producto/{id}/editar', 'ProductController@editar_producto')->name('producto.editar');
+
+Route::post('/producto/actualizar/{id}', 'ProductController@actualizar_producto')->name('producto.actualizar');
+
+Route::post('/producto/{id}/eliminar', 'ProductController@elimininar_producto')->name('producto.eliminar');
+
+

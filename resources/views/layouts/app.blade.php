@@ -72,6 +72,9 @@
 
                                 <a href="{{ route('kit') }}" class="dropdown-item">Crear kit</a>
 
+                                <a href="{{ route('producto') }}" class="dropdown-item">Registrar Producto</a>
+
+
                                 @endif
 
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
