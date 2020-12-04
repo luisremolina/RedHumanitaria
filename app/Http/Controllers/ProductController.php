@@ -16,6 +16,65 @@ class ProductController extends Controller
     {
         return view('dashboard.productos.registrar');
     }
+    public function index2()
+    {
+        $productos = Product::all();
+        return view('dashboard.productos', compact('productos'));
+    }
+
+    public function carrito()
+    {
+
+        return view('dashboard.carrito');
+    }
+    public function detalles($id)
+    {
+        $productos = Product::find($id);
+        return view('dashboard.detail', compact('productos'));
+    }
+
+    public function addTocart($id)
+    {
+        $productos = Product::find($id);
+        $cart = session()->get('cart');
+
+        if (!$cart) {
+
+            $cart = [
+                        $id =>[
+                            "Nombre" => $productos->nombre,
+                            "Cantidad" => 1,
+                            "Precio" => $productos->precioActual
+                        ]
+
+                    ];
+                
+                    session()->put('cart', $cart);
+                    return redirect()->back()->with('flash','Producto agregado correctamente');
+
+        }
+
+        if (isset($cart[$id])){
+
+            $cart[$id]['Cantidad']++;
+            session()->put('cart', $cart);
+            return redirect()->back()->with('flash','Producto agregado correctamente');
+
+        }
+
+        $cart[$id] = [
+            "Nombre" => $productos->nombre,
+            "Cantidad" => 1,
+            "Precio" => $productos->precioActual
+        ];
+        session()->put('cart', $cart);
+        return redirect()->back()->with('flash','Producto agregado correctamente');
+
+            
+
+
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -36,7 +95,7 @@ class ProductController extends Controller
     }
 
     public function tabla_producto(){
-        $producto = Product::paginate(1);
+        $producto = Product::paginate(10);
        
         return view('dashboard.productos.tabla', compact("producto"));
     }

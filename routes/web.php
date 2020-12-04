@@ -73,6 +73,14 @@ Route::post('/kit/{id}/eliminar', 'KitController@elimininar_kit')->name('kit.eli
 
 Route::get('/producto', 'ProductController@index')->name('producto');
 
+Route::get('/productos-tienda', 'ProductController@index2')->name('productos-tienda');
+
+Route::get('/carrito', 'ProductController@carrito')->name('carrito');
+
+Route::get('/detalle/{id}', 'ProductController@detalles')->name('detalle');
+
+Route::get('/agregar-al-carrito/{id}', 'ProductController@addTocart')->name('cart');
+
 Route::post('/producto/guardar', 'ProductController@create')->name('producto.guardar');
 
 Route::get('/producto/registrados', 'ProductController@tabla_producto')->name('producto.registrados');
