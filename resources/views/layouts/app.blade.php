@@ -78,6 +78,8 @@
                                 <a href="{{ route('kit') }}" class="dropdown-item">Crear kit</a>
 
                                 <a href="{{ route('producto') }}" class="dropdown-item">Registrar Producto</a>
+                                <a href="{{ route('producto.registrados') }}" class="dropdown-item"> Ver Productos Registrados</a>
+                                
 
 
                                 @endif

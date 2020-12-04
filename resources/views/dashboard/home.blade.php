@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <a class="navbar-brand" href="{{ route('productos-tienda') }}">Tienda Virtual</a>
+                    <a class="btn btn-primary" href="{{ route('productos-tienda') }}">Tienda Virtual</a>
                     
                   
                 </div>
