@@ -18,13 +18,14 @@ class ProductController extends Controller
     }
     public function index2()
     {
+        $cart = session()->get('cart');
+        // dd(count($cart));
         $productos = Product::all();
-        return view('dashboard.productos', compact('productos'));
+        return view('dashboard.productos', compact('productos', 'cart'));
     }
 
     public function carrito()
     {
-
         return view('dashboard.carrito');
     }
     public function detalles($id)
@@ -33,6 +34,14 @@ class ProductController extends Controller
         return view('dashboard.detail', compact('productos'));
     }
 
+    public function borrarItem($id){
+
+        $cart = session()->get('cart');
+        unset($cart[$id]);
+        session()->put('cart', $cart);
+        return redirect()->back()->with('flash','Producto eliminado correctamente');
+
+    }
     public function addTocart($id)
     {
         $productos = Product::find($id);

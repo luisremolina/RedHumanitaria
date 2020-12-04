@@ -81,6 +81,9 @@ Route::get('/detalle/{id}', 'ProductController@detalles')->name('detalle');
 
 Route::get('/agregar-al-carrito/{id}', 'ProductController@addTocart')->name('cart');
 
+Route::get('/borrarItem/{id}', 'ProductController@borrarItem')->name('delete-cart');
+
+
 Route::post('/producto/guardar', 'ProductController@create')->name('producto.guardar');
 
 Route::get('/producto/registrados', 'ProductController@tabla_producto')->name('producto.registrados');

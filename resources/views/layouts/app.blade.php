@@ -63,6 +63,9 @@
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
+                                
+                                <a href="{{ route('productos-tienda') }}" class="dropdown-item">Tienda virtual</a>
+
                                 @if(auth()->user()->isAdmin())
 
                                 <a href="{{ route('usuarios') }}" class="dropdown-item">Registrar Caminante</a>

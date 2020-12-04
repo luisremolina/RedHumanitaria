@@ -8,8 +8,15 @@
                     
                     <div class="card-header">{{ __('Nuestros Productos') }}</div>
 
-                    <a href="{{ route('carrito') }}" class="btn btn-success mt-4 btn-lg btn-block" role="button" aria-pressed="true">Mi carrito de compras</a>
-
+                    {{-- @if (count(cart::getContent())) --}}
+                    {{-- @foreach ($cart as $c)
+                    <h1> {{$c->Nombre }} </h1>
+                        
+                    @endforeach       --}}
+                    {{-- <h1> {{$cart}} </h1> --}}
+            
+                    <a href="{{ route('carrito') }}" class="btn btn-success mt-4 btn-lg btn-block" role="button" aria-pressed="true">Mi carrito de compras <span class="badge badge-primary">{{ count($cart)}}</span> </a>
+                    
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
