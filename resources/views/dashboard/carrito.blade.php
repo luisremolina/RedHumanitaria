@@ -2,10 +2,11 @@
 
 @section('content')
 <div class="container">
+    <a class="btn btn-secondary" href="{{ route('productos-tienda') }}">Tienda Virtual</a> 
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Carrito de compras') }}, <a class="navbar-brand" href="{{ route('productos-tienda') }}">Tienda Virtual</a> </div>
+                <div class="card-header">{{ __('Carrito de compras') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
