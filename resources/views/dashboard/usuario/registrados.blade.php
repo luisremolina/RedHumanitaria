@@ -2,7 +2,10 @@
 
 @section('content')
     <div class="container">
-        <div class="row justify-content-center">
+      <a class="btn btn-primary" href="{{ route('usuarios') }}" >Nuevo Usuario</a>
+      <a class="btn btn-success" href="{{ route('informeUsuarios') }}" target="_blank">Descargar PDF</a>
+      <hr>
+      <div class="row justify-content-center">
           <h5 class="mb-4">USUARIOS REGISTRADOS</h5>
             <div class="col-12 table-responsive">
               <table class="table">

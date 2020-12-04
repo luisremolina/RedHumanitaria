@@ -94,4 +94,9 @@ Route::post('/producto/actualizar/{id}', 'ProductController@actualizar_producto'
 
 Route::post('/producto/{id}/eliminar', 'ProductController@elimininar_producto')->name('producto.eliminar');
 
+//////////////////////////////// DOM PDF ///////////////////////////////
+
+Route::get('/pdf', 'PDFController@PDF')->name('descargaPDF');
+
+Route::get('/pdfUsuarios', 'PDFController@PDFusuarios')->name('informeUsuarios');
 

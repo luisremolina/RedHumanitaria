@@ -2,6 +2,10 @@
 
 @section('content')
 <div class="container">
+<a class="btn btn-primary" href="{{ route('producto') }}" >Nuevo Producto</a>
+<a class="btn btn-success" href="{{ route('descargaPDF') }}" target="_blank">Descargar PDF</a>
+
+<hr>
     <div class="row justify-content-center">
       <h5 class="mb-4">REGISTROS DE PRODUCTOS</h5>
         <div class="col-12 table-responsive">
