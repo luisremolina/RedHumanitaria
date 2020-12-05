@@ -5,9 +5,12 @@
 
     <div class="row justify-content-center">
         <div class="col-1"><a href="{{ route('carrito') }}" class="btn btn-warning" role="button" aria-pressed="true"><i class="fa fa-shopping-cart"></i> <span class="badge badge-light">{{ count($cart)}}</span> </a></div>
+       {{-- <div class="col-1"><a href="{{ route('carrito') }}" class="btn btn-warning" role="button" aria-pressed="true"><i class="fa fa-shopping-cart"></i></a></div> --}}
+
         <div class="col-md-11 card-header">{{ __('Nuestros Productos') }}</div>
      
     </div>
+    
 
     <div class="row mt-5 justify-content-center">
                  @foreach ($productos as $item)

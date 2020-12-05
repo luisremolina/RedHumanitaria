@@ -19,7 +19,7 @@ class UserController extends Controller
 
     public function mostrar_tabla(){
 
-        $usuarios = User::paginate(10);
+        $usuarios = User::paginate(4);
         return view('dashboard.usuario.registrados', compact('usuarios'));
     }
 
