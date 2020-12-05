@@ -26,14 +26,7 @@
                     <label for="descripcion_larga">Descripcion larga</label>
                     <textarea class="form-control" name="descripcion_larga"  id="descripcion_larga" placeholder="Descripcion larga del producto" cols="30" rows="5"></textarea>
                   </div>
-                {{-- <div class="form-group">
-                  <label for="descripcion">Inventario</label>
-                  <select class="form-control" name="inventario_id" id="descripcion">
-                    @foreach ($inventario as $inv)
-                  <option value="{{$inv->id}}">{{$inv->nombre}}</option>    
-                    @endforeach
-                  </select>
-                </div> --}}
+              
                 <div class="form-group">
                   <button type="submit" class="btn btn-primary">Guardar</button>
                   <a href=" {{ route('producto.registrados' ) }} " class="btn btn-secondary">Ver Registrados</a>

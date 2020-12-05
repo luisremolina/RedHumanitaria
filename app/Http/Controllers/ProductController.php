@@ -30,8 +30,9 @@ class ProductController extends Controller
     }
     public function detalles($id)
     {
+        $cart = session()->get('cart');
         $productos = Product::find($id);
-        return view('dashboard.detail', compact('productos'));
+        return view('dashboard.detail', compact('productos', 'cart'));
     }
 
     public function borrarItem($id){
