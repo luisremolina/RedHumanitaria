@@ -4,7 +4,7 @@
 <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-              <form action="{{ route('producto.guardar' ) }}" method="POST">
+              <form action="{{ route('producto.guardar') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                   <label for="nombre_producto">Nombre producto</label>
@@ -26,7 +26,13 @@
                     <label for="descripcion_larga">Descripcion larga</label>
                     <textarea class="form-control" name="descripcion_larga"  id="descripcion_larga" placeholder="Descripcion larga del producto" cols="30" rows="5"></textarea>
                   </div>
-              
+                  <div class="form-group">
+                    <label for="imagen">URL Imagen</label>
+                    <input type="file" name="file" class="form-control" id="file" accept="image/*" >
+                    @error('file')
+                <small>{{$message}}</small>
+                    @enderror
+                  </div>
                 <div class="form-group">
                   <button type="submit" class="btn btn-primary">Guardar</button>
                   <a href=" {{ route('producto.registrados' ) }} " class="btn btn-secondary">Ver Registrados</a>

@@ -100,3 +100,9 @@ Route::get('/pdf', 'PDFController@PDF')->name('descargaPDF');
 
 Route::get('/pdfUsuarios', 'PDFController@PDFusuarios')->name('informeUsuarios');
 
+/////////////////////////////imagenes////////////////////////////////////////
+
+Route::get('/imagenes-uploader', 'ProductController@storage')->name('images');
+
+Route::post('/imagenes-uploader-store/{id}', 'ProductController@store')->name('image.store');
+

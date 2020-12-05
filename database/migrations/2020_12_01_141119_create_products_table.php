@@ -20,9 +20,10 @@ class CreateProductsTable extends Migration
             $table->bigInteger("stock");
             $table->integer("precioActual");
             $table->integer("precioAnterior");
-            $table->integer("porcentajeDescuento")->default();
+            $table->integer("porcentajeDescuento")->nullable();
             $table->text("descripcionCorta");
             $table->text("descripcionLarga");
+            $table->text("imagen")->nullable();
             $table->enum("estado",['PUBLICADO','BORRADO'])->default('BORRADO');
             $table->timestamps();
         });

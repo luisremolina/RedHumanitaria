@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+
 
 class ProductController extends Controller
 {
@@ -16,6 +18,25 @@ class ProductController extends Controller
     {
         return view('dashboard.productos.registrar');
     }
+    public function storage()
+    {
+        return view('dashboard.productos.subirimages');
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'file'=> 'required|image|max:2048'
+        ]); 
+
+        $images = $request->file('file')->store('public/imagenes');
+        $url = Storage::url($images);
+       
+        Product::create([
+            'imagen' => $url
+        ]);
+    }
+
     public function index2()
     {
         $cart = session()->get('cart');
@@ -93,12 +114,24 @@ class ProductController extends Controller
      */
     public function create(request $request)
     {
+        $request->validate([
+            'file'=> 'required|image|max:2048'
+        ]); 
+
+        $images = $request->file('file')->store('public/imagenes');
+        $url = Storage::url($images);
+       
+        // Product::create([
+        //     'imagen' => $url
+        // ]);
+
         $producto = new Product;
         $producto->nombre = $request->nombre_producto;
         $producto->stock = $request->stock;
         $producto->precioActual = $request->precio;
         $producto->precioAnterior = $request->precio;
         $producto->descripcionCorta = $request->descripcion_corta;
+        $producto->imagen = $url;
         $producto->descripcionLarga = $request->descripcion_larga;
         $producto->save();
         return back()->with('flash', "Se ha guardado el producto con exito"); 
@@ -126,6 +159,13 @@ class ProductController extends Controller
 
     public function actualizar_producto(Request $request){
         
+        $request->validate([
+            'file'=> 'required|image|max:2048'
+        ]); 
+
+        $images = $request->file('file')->store('public/imagenes');
+        $url = Storage::url($images);
+
         $producto = Product::where('id',$request->id)->firstOrFail();
 
         $producto->nombre = $request->nombre_producto;
@@ -134,6 +174,7 @@ class ProductController extends Controller
         $producto->precioActual = $request->precio;
         $producto->descripcionCorta = $request->descripcion_corta;
         $producto->descripcionLarga = $request->descripcion_larga;
+        $producto->imagen = $url;
         $producto->save();
         return back()->with('flash', "Se ha actualizado el producto con exito"); 
     }

@@ -4,7 +4,7 @@
 <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-              <form action="{{ route('producto.actualizar', $producto->id ) }}" method="POST">
+              <form action="{{ route('producto.actualizar', $producto->id ) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                   <label for="nombre_producto">Nombre producto</label>
@@ -26,14 +26,18 @@
                     <label for="descripcion_larga">Descripcion larga</label>
                     <textarea class="form-control" name="descripcion_larga"  id="descripcion_larga" cols="30" rows="5">{{ $producto->descripcionLarga}}</textarea>
                   </div>
-                {{-- <div class="form-group">
-                  <label for="descripcion">Inventario</label>
-                  <select class="form-control" name="inventario_id" id="descripcion">
-                    @foreach ($inventario as $inv)
-                  <option value="{{$inv->id}}">{{$inv->nombre}}</option>    
-                    @endforeach
-                  </select>
-                </div> --}}
+
+                  <div class="form-group">
+                    <label for="imagen">URL Imagen</label>
+                    <input type="text" name="imagen" class="form-control" id="file" value="{{ $producto->imagen}}">
+                    <input type="file" accept="image/*" name="file" class="form-control" id="file" value="{{ $producto->imagen}}">
+                  </div>
+
+                  
+                   
+
+                  {{-- aa --}}
+                
                 <div class="form-group">
                   <button type="submit" class="btn btn-primary">Actualizar</button>
                   <a href=" {{ route('producto.registrados' ) }} " class="btn btn-secondary">Volver</a>

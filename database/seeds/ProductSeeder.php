@@ -24,6 +24,7 @@ class ProductSeeder extends Seeder
             'porcentajeDescuento' => 10,
             'descripcionCorta' => "Camisa para caballero",
             'descripcionLarga' => "Elaborado en algodón licrado de excelente calidad, y a un excelente precio, hay disponible en todas las tallas",
+            'imagen' => 'web/images/coming.jpg',
             'estado' => "PUBLICADO"
 
         ]);

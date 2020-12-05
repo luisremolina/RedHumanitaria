@@ -16,6 +16,7 @@ class Product extends Model
         'porcentajeDescuento',
         'descripcionCorta',
         'descripcionLarga',
+        'imagen',
         'estado'
     ];
    

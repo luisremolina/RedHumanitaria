@@ -14,13 +14,15 @@
 
                         <div class="card-deck col-4 mt-4">
                             <div class="card">
-                              <img src="{{asset('web/images/coming.jpg')}}" class="card-img-top" alt="foto de algo ">
+
+                              
+                            <img style="object-fit: contain;" src="{{$item->imagen}}" class="card-img-top" alt="Imagen">
                               <div class="card-body">
                                 <h4 style="text-transform: capitalize" class="card-title">{{$item->nombre}}</h4>
                                 <p class="card-text">{{$item->descripcionCorta}}</p>
                                <div class="d-flex">
                                         {{-- <p class="card-text "><small class="text-muted"></small></p> --}}
-                                        <h6 class="card-text"> ${{$item->precioActual}} <span class="badge badge-warning">New</span></h6>
+                                        <h6 class="card-text"> ${{$item->precioActual}} <span class="badge badge-danger">New</span></h6>
                                         <h6 class="card-text ml-4" style="text-decoration: line-through;"> ${{$item->precioAnterior}}</h6>
                                </div>
                                 <a style="font-size: 11px" href="{{route('cart', $item->id)}}" class="badge badge-primary">ADD TO CART</a>
