@@ -28,7 +28,7 @@
                         <tbody>
                          
                           <tr>
-                            <td width="300px">  <img src="{{asset('web/images/coming.jpg')}}" alt="imagen" width="100%" height="300px"> </td>
+                            <td width="300px">  <img style="object-fit: contain;" src="{{$productos->imagen}}" alt="imagen" width="100%" height="300px"> </td>
 
                             <td  width="400px">
                                 <h3 style="text-transform: uppercase;">  {{$productos->nombre}} </h3>

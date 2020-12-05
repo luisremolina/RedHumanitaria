@@ -16,7 +16,7 @@
                             <div class="card">
 
                               
-                            <img style="object-fit: contain;" src="{{$item->imagen}}" class="card-img-top" alt="Imagen">
+                            <img style="object-fit: contain; height: 300px" src="{{$item->imagen}}" class="card-img-top" alt="Imagen">
                               <div class="card-body">
                                 <h4 style="text-transform: capitalize" class="card-title">{{$item->nombre}}</h4>
                                 <p class="card-text">{{$item->descripcionCorta}}</p>

@@ -75,7 +75,8 @@ class ProductController extends Controller
                         $id =>[
                             "Nombre" => $productos->nombre,
                             "Cantidad" => 1,
-                            "Precio" => $productos->precioActual
+                            "Precio" => $productos->precioActual,
+                            "Imagen" => $productos->imagen
                         ]
 
                     ];
@@ -96,7 +97,8 @@ class ProductController extends Controller
         $cart[$id] = [
             "Nombre" => $productos->nombre,
             "Cantidad" => 1,
-            "Precio" => $productos->precioActual
+            "Precio" => $productos->precioActual,
+            "Imagen" => $productos->imagen
         ];
         session()->put('cart', $cart);
         return redirect()->back()->with('flash','Producto agregado correctamente');
