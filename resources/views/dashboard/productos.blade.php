@@ -5,6 +5,7 @@
 
     <div class="row justify-content-center">
         <div class="col-1"><a style="width: 100%" href="{{ route('carrito') }}" class="btn btn-warning" role="button" aria-pressed="true"><i class="fa fa-shopping-cart"></i> <span class="badge badge-danger">{{ count($cart)}}</span> </a></div>
+        {{-- /*{{ count($cart)}} --}}
         <div class="col-md-11">
             <div class="card">
 
