@@ -11,13 +11,13 @@ class UserController extends Controller
 {
 
     public function formulario_registrar(){
-
+        
         return view('dashboard.usuario.crear');
     }
 
 
 
-    public function mostrar_tabla(){
+    public function mostrar_tabla(Request $request){
 
         $usuarios = User::paginate(4);
         return view('dashboard.usuario.registrados', compact('usuarios'));
@@ -28,7 +28,7 @@ class UserController extends Controller
     public function guardar_usuario(Request $request){
 
         $request->validate([
-            'dni' => 'required',
+            'dni' => 'required|unique:users',
             'nombres' => 'required',
             'sexo'=> 'required',
             'telefono'=> 'required',
@@ -60,7 +60,33 @@ class UserController extends Controller
         return view('dashboard.usuario.editar',compact("usuario", 'tipo_kit'));
     }
 
+    public function buscarUsuario(Request $request){
 
+        
+            if ($request){
+                $search = $request->get('search');
+                $usuarios = User::where('nombres', 'LIKE' ,'%'.$search.'%')->paginate(4);
+                return view('dashboard.usuario.registrados', compact('usuarios'));
+            }
+
+    }
+
+    public function buscar_usuario(Request $request){
+
+        $usuarios = User::all();
+        if ($request){
+            $user = $request->get('dni');
+            foreach ($usuarios as $usuario){
+                if ($usuario->dni == $user) {
+                    $tipo_kit = Tipo_kit::all();
+                    return view('dashboard.usuario.editar',compact("usuario", 'tipo_kit'));
+                }
+            }
+            return back()->with('flash', "No hay usuario con esta DNI");
+        }
+
+}
+    
     public function actualizar(Request $request){
 
 

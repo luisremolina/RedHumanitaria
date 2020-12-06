@@ -2,8 +2,24 @@
 
 @section('content')
     <div class="container">
-      <a class="btn btn-primary" href="{{ route('usuarios') }}" >Nuevo Usuario</a>
-      <a class="btn btn-success" href="{{ route('informeUsuarios') }}" target="_blank">Descargar PDF</a>
+     
+        <div class="row">
+           <div class="col-4">
+              <a class="btn btn-primary mr-3" href="{{ route('usuarios') }}" >Nuevo Usuario</a>
+              <a class="btn btn-success mr-3" href="{{ route('informeUsuarios') }}" target="_blank">Descargar PDF</a>
+          </div>
+          <form action="{{ route('buscar-usuario') }}" method="get">
+            @csrf
+            <div class="d-flex">
+              <input style="width: 200px" type="search" class="form-control" name="search" placeholder="Buscar Usuario" aria-label="Nombre" aria-describedby="addon-wrapping">
+        
+              <button type="submit" class="btn"> <i class="fa fa-search"></i> </button>
+            </div>
+          </form>
+        </div>
+      
+      
+
       <hr>
       <div class="row justify-content-center">
           <h5 class="mb-4">USUARIOS REGISTRADOS</h5>

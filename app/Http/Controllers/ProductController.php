@@ -64,6 +64,28 @@ class ProductController extends Controller
         return redirect()->back()->with('flash','Producto eliminado correctamente');
 
     }
+    public function descontaritem($id){
+        
+        $productos = Product::find($id);
+        $cart = session()->get('cart');
+
+        if ($cart[$id]['Cantidad'] == 1){
+            return redirect()->back();
+        }else{
+            $cart[$id]['Cantidad']--;
+            session()->put('cart', $cart);
+            return redirect()->back();
+        }
+        
+    }
+    public function aumentaritem($id){
+        
+        $productos = Product::find($id);
+        $cart = session()->get('cart');
+        $cart[$id]['Cantidad']++;
+        session()->put('cart', $cart);
+        return redirect()->back();
+    }
     public function addTocart($id)
     {
         $productos = Product::find($id);
@@ -76,6 +98,7 @@ class ProductController extends Controller
                             "Nombre" => $productos->nombre,
                             "Cantidad" => 1,
                             "Precio" => $productos->precioActual,
+                            "Descripcion" => $productos->descripcionCorta,
                             "Imagen" => $productos->imagen
                         ]
 
@@ -98,6 +121,7 @@ class ProductController extends Controller
             "Nombre" => $productos->nombre,
             "Cantidad" => 1,
             "Precio" => $productos->precioActual,
+            "Descripcion" => $productos->descripcionCorta,
             "Imagen" => $productos->imagen
         ];
         session()->put('cart', $cart);

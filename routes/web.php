@@ -32,6 +32,8 @@ Route::get('/usuarios', 'UserController@formulario_registrar')->name('usuarios')
 
 Route::post('/usuarios/guardar', 'UserController@guardar_usuario')->name('usuarios.guardar');
 
+Route::get('/usuarios/buscar', 'UserController@buscar_usuario')->name('usuarios.buscar');
+
 Route::get('/usuarios/registrados', 'UserController@mostrar_tabla')->name('usuarios.registrados');
 
 Route::get('/usuarios/{id}/eliminar', 'UserController@elimina_usuario')->name('usuarios.eliminar');
@@ -39,6 +41,8 @@ Route::get('/usuarios/{id}/eliminar', 'UserController@elimina_usuario')->name('u
 Route::get('/editar/{id}', 'UserController@editar')->name('editar');
 
 Route::post('/actualizar/{id}', 'UserController@actualizar')->name('actualizar');
+
+Route::get('/buscarUsuario', 'UserController@buscarUsuario')->name('buscar-usuario');
 
 
 ////////////////////////////////// RUTAS DE INVENTARIO ///////////////////////////////
@@ -80,6 +84,11 @@ Route::get('/carrito', 'ProductController@carrito')->name('carrito');
 Route::get('/detalle/{id}', 'ProductController@detalles')->name('detalle');
 
 Route::get('/agregar-al-carrito/{id}', 'ProductController@addTocart')->name('cart');
+
+Route::get('/Descontar-de-carrito/{id}', 'ProductController@descontaritem')->name('cartDescon');
+
+Route::get('/Aumentar-de-carrito/{id}', 'ProductController@aumentaritem')->name('cartAument');
+
 
 Route::get('/borrarItem/{id}', 'ProductController@borrarItem')->name('delete-cart');
 
