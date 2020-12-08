@@ -6,8 +6,9 @@
     <div class="container">
         <div class="center fadeInDown">
             <h2>Trabajos Recientes</h2>
-            <p class="lead">La Red Humanitaria es una asociación de organizaciones de la sociedad civil dedicada a la
-                respuesta de emergencia dentro del proceso migratorio</p>
+            <p class="lead">Mision en la ruta de caminantes: 21000 raciones de alimentos distribuidas en 8 puntos humanitarias.
+                La Red Humanitaria es una asociación de organizaciones de la sociedad civil dedicada a la
+                respuesta de emergencia dentro del proceso migratorio. La Red Humanitaria es una asociación sin ánimo de lucro que trabaja para dignificar la vida de las personas migrantes y refugiadas, venezolanas y retornadas, bajo el principio de humanidad y el reconocimiento de un enfoque diferencial. </p>
         </div>
     </div>
     <div class="container">
