@@ -31,7 +31,9 @@
                                 <hr>
                                 <p>{{  $details['Descripcion']  }}</p>
                                 <h4> <span id="valoritem" class="badge badge-primary"> ${{$details['Precio']}}</span></h4>
+                                {{-- @include('talla'); --}}
                                 <a style="font-size: 11px" href="{{ route('delete-cart', $id )}}" class="badge badge-danger">DELETE</a>
+                                
                             </td>
                             <td style="vertical-align: middle">
                                 <div class="d-flex justify-content-around">

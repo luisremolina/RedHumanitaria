@@ -17,7 +17,10 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet">
+    {{-- <link href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.css' rel='stylesheet' /> --}}
     <link href="{{asset('web/css/font-awesome.min.css')}}" rel="stylesheet">
+    <link href='https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.1/css/all.css' rel='stylesheet'>
+    @yield('links')
 
 </head>
 
@@ -65,6 +68,8 @@
 
                                 
                                 <a href="{{ route('productos-tienda') }}" class="dropdown-item">Tienda virtual</a>
+
+                                <a href="{{ route('agenda') }}" class="dropdown-item">Agendar Cita</a>
 
                                 @if(auth()->user()->isAdmin())
 
@@ -116,6 +121,7 @@
     </div>
 </body>
 <!-- Scripts -->
+{{-- <script src="{{ asset('web/jquery.min.js') }}"></script> --}}
 <script src="{{ asset('js/app.js') }}"></script>
 <script src="{{ asset('js/select2.min.js') }}"></script>
 <script>
@@ -127,5 +133,6 @@
         });
     });
 </script>
+@yield('scripts')
 
 </html>

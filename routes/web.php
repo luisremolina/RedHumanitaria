@@ -115,3 +115,12 @@ Route::get('/imagenes-uploader', 'ProductController@storage')->name('images');
 
 Route::post('/imagenes-uploader-store/{id}', 'ProductController@store')->name('image.store');
 
+
+/////////////////////////////RUTAS PARA LA AGENDA ////////////////////////////////////////
+
+Route::get('/agenda', 'AgendaController@index')->name('agenda');
+
+Route::post('/agenda/guardar', 'AgendaController@guardar');
+
+Route::get('/agenda/listar', 'AgendaController@listar');
+
