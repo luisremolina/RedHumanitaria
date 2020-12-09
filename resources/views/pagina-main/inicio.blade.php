@@ -194,12 +194,12 @@
             </div>
             <div class="single-slide">
                 <div class="slide-img">
-                    <img src="{{ asset('web/images/testimonial7.JPEG') }}" alt="">
+                    <img src="{{ asset('web/images/testimonial7.jpeg') }}" alt="">
                 </div>
                 <div class="content">
-                    <img src="{{ asset('web/images/testimonials1') }}" alt="">
-                    <p>Somos deportistas y decidimos caminar porque en nuestro pais no hemos tenido apoyo.</p>
-                    <h4>- Maria, Manuel</h4>
+                    <img src="{{ asset('web/images/review.png') }}" alt="">
+                    <p>Soy enfermera y decidi caminar pero ha sido muy duro</p>
+                    <h4>- Maria Sotelo</h4>
                 </div>
             </div>
             <div class="single-slide">
