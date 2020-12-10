@@ -18,13 +18,13 @@ class UsersTableSeeder extends Seeder
 
         User::create([
             
-            'nombres' => "Luis Alfredo Chuscano Remolina",
-            'dni' => 1010122859,
+            'nombres' => "JOse luis muñoz",
+            'dni' => 12345,
             'sexo' => 'Masculino',
-            'telefono' => 3146741224,
+            'telefono' => 3115514225,
             'edad' => 21,
             'admin' => true,
-            'email' => "luischuscano@gmail.com",
+            'email' => "joseluis1811@gmail.com",
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
         
             ]);
@@ -33,12 +33,12 @@ class UsersTableSeeder extends Seeder
            
         User::create([
             
-            'nombres' => "Luis Remolina $i",
+            'nombres' => "Luis Carlos $i",
             'dni' => 10101010+$i,
             'sexo' => 'Masculino',
-            'telefono' => 3146741224,
+            'telefono' => 31467487,
             'edad' => 21,
-            'email' => "luischuscano$i@gmail.com",
+            'email' => "joseluis1811$i@gmail.com",
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
         
             ]);
@@ -47,3 +47,4 @@ class UsersTableSeeder extends Seeder
 
     }
 }
+
