@@ -17,7 +17,10 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet">
+    {{-- <link href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.css' rel='stylesheet' /> --}}
     <link href="{{asset('web/css/font-awesome.min.css')}}" rel="stylesheet">
+    <link href='https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.1/css/all.css' rel='stylesheet'>
+    @yield('links')
 
 </head>
 
@@ -28,6 +31,7 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
+                
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="{{ __('Toggle navigation') }}">
@@ -49,6 +53,7 @@
                         </li>
                         @if (Route::has('register'))
                         <li class="nav-item">
+                            
                             <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                         </li>
                         @endif
@@ -61,6 +66,11 @@
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
+                                
+                                <a href="{{ route('productos-tienda') }}" class="dropdown-item">Tienda virtual</a>
+
+                                <a href="{{ route('agenda') }}" class="dropdown-item">Agendar Cita</a>
+
                                 @if(auth()->user()->isAdmin())
 
                                 <a href="{{ route('usuarios') }}" class="dropdown-item">Registrar Caminante</a>
@@ -71,6 +81,11 @@
                                 <a href="{{ route('inventario') }}" class="dropdown-item">Registrar Inventario</a>
 
                                 <a href="{{ route('kit') }}" class="dropdown-item">Crear kit</a>
+
+                                <a href="{{ route('producto') }}" class="dropdown-item">Registrar Producto</a>
+                                <a href="{{ route('producto.registrados') }}" class="dropdown-item"> Ver Productos Registrados</a>
+                                
+
 
                                 @endif
 
@@ -106,6 +121,7 @@
     </div>
 </body>
 <!-- Scripts -->
+{{-- <script src="{{ asset('web/jquery.min.js') }}"></script> --}}
 <script src="{{ asset('js/app.js') }}"></script>
 <script src="{{ asset('js/select2.min.js') }}"></script>
 <script>
@@ -117,5 +133,6 @@
         });
     });
 </script>
+@yield('scripts')
 
 </html>

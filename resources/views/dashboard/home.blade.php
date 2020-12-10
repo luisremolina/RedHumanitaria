@@ -13,8 +13,9 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    {{ __('Estas Logueado!') }}
+                    <a class="btn btn-primary" href="{{ route('productos-tienda') }}">Tienda Virtual</a>
+                    
+                  
                 </div>
             </div>
         </div>
