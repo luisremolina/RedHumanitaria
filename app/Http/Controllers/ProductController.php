@@ -23,19 +23,19 @@ class ProductController extends Controller
         return view('dashboard.productos.subirimages');
     }
 
-    public function store(Request $request)
-    {
-        $request->validate([
-            'file'=> 'required|image|max:2048'
-        ]); 
+    // public function store(Request $request)
+    // {
+    //     $request->validate([
+    //         'file'=> 'required|image|max:2048'
+    //     ]); 
 
-        $images = $request->file('file')->store('public/imagenes');
-        $url = Storage::url($images);
+    //     $images = $request->file('file')->store('public/imagenes');
+    //     $url = Storage::url($images);
        
-        Product::create([
-            'imagen' => $url
-        ]);
-    }
+    //     Product::create([
+    //         'imagen' => $url
+    //     ]);
+    // }
 
     public function index2()
     {
@@ -85,15 +85,21 @@ class ProductController extends Controller
         if($cart[$id]['Cantidad']==$prod->stock){
             return redirect()->back()->with('flash','No hay mas stock');
         
-            }else{
-            $productos = Product::find($id);
-            $cart = session()->get('cart');
+        $productos = Product::find($id);
+        $cart = session()->get('cart');
+        // $cart[$id]['Cantidad']++;
+        // session()->put('cart', $cart);
+        // return redirect()->back();
+        if ($cart[$id]['Cantidad'] == $productos->stock){
+            return redirect()->back()->with('flash','Tienes el maximo numero de stock');;
+        }else{
             $cart[$id]['Cantidad']++;
             session()->put('cart', $cart);
-            return back();
+            return redirect()->back();
         }
-      
+
     }
+}
     public function addTocart($id)
     {
         $productos = Product::find($id);
@@ -135,9 +141,6 @@ class ProductController extends Controller
         session()->put('cart', $cart);
         return redirect()->back()->with('flash','Producto agregado correctamente');
 
-            
-
-
     }
 
 
@@ -149,16 +152,19 @@ class ProductController extends Controller
     public function create(request $request)
     {
         $request->validate([
+            'nombre_producto' => 'required',
+            'stock'=> 'required',
+            'precio'=> 'required',
+            'descripcion_corta' => 'required',
+            'descripcion_larga'=> 'required',
+            'password'=> 'required|min:8|confirmed',
             'file'=> 'required|image|max:2048'
-        ]); 
+        ]);
+// hasta el momento no funciona el required. revisarlo
 
+      
         $images = $request->file('file')->store('public/imagenes');
         $url = Storage::url($images);
-       
-        // Product::create([
-        //     'imagen' => $url
-        // ]);
-
         $producto = new Product;
         $producto->nombre = $request->nombre_producto;
         $producto->stock = $request->stock;

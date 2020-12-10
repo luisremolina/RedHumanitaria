@@ -31,31 +31,9 @@
                                 <h3 style="text-transform: uppercase;">  {{$productos->nombre}} </h3>
                                 <hr>
                                 <h5>{{$productos->descripcionLarga}}</h5>
-                                <p>Tallas:</p>
-                                <div class="form-check-inline">
-                                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                                            <label class="form-check-label" for="exampleRadios1">
-                                            L
-                                            </label>
-                                        </div>
-                                        <div class="form-check-inline">
-                                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                                            <label class="form-check-label" for="exampleRadios2">
-                                            XL
-                                            </label>
-                                        </div>
-                                        <div class="form-check-inline">
-                                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" >
-                                            <label class="form-check-label" for="exampleRadios3">
-                                            S
-                                            </label>
-                                        </div>
-                                        <div class="form-check-inline">
-                                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" >
-                                            <label class="form-check-label" for="exampleRadios3">
-                                            M
-                                            </label>
-                                    </div>
+                                {{-- <p>Tallas:</p> --}}
+                                {{-- @include('dashboard/talla') --}}
+                                
                               <div class="badge text-wrap mt-4" style="display:flex">
                                 <h4> <span class="badge badge-warning"> ${{$productos->precioActual}}</span></h4>
                                 <p class="text-muted" style="text-decoration: line-through; margin-left: 4px; margin-top: 13px">${{$productos->precioAnterior}}</p>

@@ -61,14 +61,23 @@ class UserController extends Controller
     }
 
     public function buscarUsuario(Request $request){
-
-        
-            if ($request){
+    //    dd($request->get('search'));
+         $tem = $request->get('search');
+            if (!empty($tem)){
                 $search = $request->get('search');
-                $usuarios = User::where('nombres', 'LIKE' ,'%'.$search.'%')->paginate(4);
+                $usuarios = User::where('dni', $search)->paginate(1);
+                // $usuarios = User::where('nombres', 'LIKE' ,'%'.$search.'%')->paginate(4);
+                    // dd(count($usuarios));
+                    if (count($usuarios) == 0) {
+                        return redirect()->back()->with('flash', "No hay usuario con esta DNI");
+                    }else{
+                        return view('dashboard.usuario.registrados', compact('usuarios'));
+                    }
+                
+            }else{
+                $usuarios = User::paginate(4);
                 return view('dashboard.usuario.registrados', compact('usuarios'));
             }
-
     }
 
     public function buscar_usuario(Request $request){
