@@ -31,27 +31,27 @@
                                 <hr>
                                 <p>{{  $details['Descripcion']  }}</p>
                                 <h4> <span id="valoritem" class="badge badge-primary"> ${{$details['Precio']}}</span></h4>
-                                {{-- @include('talla'); --}}
+                                {{-- @include('dashboard/talla') --}}
                                 <a style="font-size: 11px" href="{{ route('delete-cart', $id )}}" class="badge badge-danger">DELETE</a>
                                 
                             </td>
                             <td style="vertical-align: middle">
                                 <div class="d-flex justify-content-around">
-                                    {{-- <button class="btn " type="button" id="button-"><i class="fa fa-angle-left" aria-hidden="true"></i></button> --}}
                                     <a class="btn" href="{{route('cartDescon', $id)}}"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
                                     <h4 class="mx-3" style="align-self: flex-end" name="quantity" id="quantity"> {{  $details['Cantidad']  }} </h4>
-                                    {{-- <button  type="button" id="button+"></button> --}}
                                     <a class="btn" href="{{route('cartAument', $id)}}"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                 </div>
-                                {{-- <div><button type="button" class="btn"></button></div> --}}
+                        
                                 
 
                             </td>
                             <td style="vertical-align: middle">
                                 <h4 name="total" id="total">$.{{ $details['Precio'] * $details['Cantidad'] }} </h4>
                             </td>
-                        </tr>
+                        
                         @endforeach
+                           
+                        </tr>
                         <tr style="text-align:center;">
                             <td colspan="2"></td>
                             <td> Valor Total </td>
@@ -60,10 +60,12 @@
                         <tr style="text-align:center;">
                             <td colspan="2"></td>
                             <td> </td>
-                            <td> <a style="font-size: 20px" href="/" class="badge badge-danger">PAGAR </a> </td>
+                            <td> <a style="font-size: 20px" href="#" class="badge badge-danger">PAGAR </a> </td>
                         </tr>
                     </tbody>
                 </table>
+                @else 
+                    <h1 class="lead mt-5 ml-5">No hay productos en el carrito</h1>
                 @endif
            </div>
          </div>

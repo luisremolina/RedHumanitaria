@@ -23,19 +23,19 @@ class ProductController extends Controller
         return view('dashboard.productos.subirimages');
     }
 
-    public function store(Request $request)
-    {
-        $request->validate([
-            'file'=> 'required|image|max:2048'
-        ]); 
+    // public function store(Request $request)
+    // {
+    //     $request->validate([
+    //         'file'=> 'required|image|max:2048'
+    //     ]); 
 
-        $images = $request->file('file')->store('public/imagenes');
-        $url = Storage::url($images);
+    //     $images = $request->file('file')->store('public/imagenes');
+    //     $url = Storage::url($images);
        
-        Product::create([
-            'imagen' => $url
-        ]);
-    }
+    //     Product::create([
+    //         'imagen' => $url
+    //     ]);
+    // }
 
     public function index2()
     {
@@ -82,9 +82,17 @@ class ProductController extends Controller
         
         $productos = Product::find($id);
         $cart = session()->get('cart');
-        $cart[$id]['Cantidad']++;
-        session()->put('cart', $cart);
-        return redirect()->back();
+        // $cart[$id]['Cantidad']++;
+        // session()->put('cart', $cart);
+        // return redirect()->back();
+        if ($cart[$id]['Cantidad'] == $productos->stock){
+            return redirect()->back()->with('flash','Tienes el maximo numero de stock');;
+        }else{
+            $cart[$id]['Cantidad']++;
+            session()->put('cart', $cart);
+            return redirect()->back();
+        }
+
     }
     public function addTocart($id)
     {
@@ -127,9 +135,6 @@ class ProductController extends Controller
         session()->put('cart', $cart);
         return redirect()->back()->with('flash','Producto agregado correctamente');
 
-            
-
-
     }
 
 
@@ -146,11 +151,6 @@ class ProductController extends Controller
 
         $images = $request->file('file')->store('public/imagenes');
         $url = Storage::url($images);
-       
-        // Product::create([
-        //     'imagen' => $url
-        // ]);
-
         $producto = new Product;
         $producto->nombre = $request->nombre_producto;
         $producto->stock = $request->stock;

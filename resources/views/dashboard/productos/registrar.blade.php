@@ -12,7 +12,7 @@
                 </div>
                 <div class="form-group">
                   <label for="stock"> Stock </label>
-                  <input type="number" name="stock" class="form-control" id="stock" placeholder="Stock del producto">
+                  <input type="number" name="stock" class="form-control" id="stock" placeholder="Stock del producto" min="1" max="6000">
                 </div>
                 <div class="form-group">
                   <label for="precio">Precio</label>

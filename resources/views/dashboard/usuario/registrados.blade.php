@@ -12,7 +12,6 @@
             @csrf
             <div class="d-flex">
               <input style="width: 200px" type="search" class="form-control" name="search" placeholder="Buscar Usuario" aria-label="Nombre" aria-describedby="addon-wrapping">
-        
               <button type="submit" class="btn"> <i class="fa fa-search"></i> </button>
             </div>
           </form>

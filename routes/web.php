@@ -77,7 +77,19 @@ Route::post('/kit/{id}/eliminar', 'KitController@elimininar_kit')->name('kit.eli
 
 Route::get('/producto', 'ProductController@index')->name('producto');
 
-Route::get('/productos-tienda', 'ProductController@index2')->name('productos-tienda');
+Route::post('/producto/guardar', 'ProductController@create')->name('producto.guardar');
+
+Route::get('/producto/registrados', 'ProductController@tabla_producto')->name('producto.registrados');
+
+Route::get('/producto/{id}/editar', 'ProductController@editar_producto')->name('producto.editar');
+
+Route::post('/producto/actualizar/{id}', 'ProductController@actualizar_producto')->name('producto.actualizar');
+
+Route::post('/producto/{id}/eliminar', 'ProductController@elimininar_producto')->name('producto.eliminar');
+
+////////////////////////////////// RUTAS DEl carrito de compras ///////////////////////////////
+
+Route::get('/borrarItem/{id}', 'ProductController@borrarItem')->name('delete-cart');
 
 Route::get('/carrito', 'ProductController@carrito')->name('carrito');
 
@@ -89,19 +101,9 @@ Route::get('/Descontar-de-carrito/{id}', 'ProductController@descontaritem')->nam
 
 Route::get('/Aumentar-de-carrito/{id}', 'ProductController@aumentaritem')->name('cartAument');
 
+Route::get('/productos-tienda', 'ProductController@index2')->name('productos-tienda');
 
-Route::get('/borrarItem/{id}', 'ProductController@borrarItem')->name('delete-cart');
 
-
-Route::post('/producto/guardar', 'ProductController@create')->name('producto.guardar');
-
-Route::get('/producto/registrados', 'ProductController@tabla_producto')->name('producto.registrados');
-
-Route::get('/producto/{id}/editar', 'ProductController@editar_producto')->name('producto.editar');
-
-Route::post('/producto/actualizar/{id}', 'ProductController@actualizar_producto')->name('producto.actualizar');
-
-Route::post('/producto/{id}/eliminar', 'ProductController@elimininar_producto')->name('producto.eliminar');
 
 //////////////////////////////// DOM PDF ///////////////////////////////
 

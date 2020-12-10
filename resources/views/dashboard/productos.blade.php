@@ -8,13 +8,8 @@
         <div class="col-1"><a href="{{ route('carrito') }}" class="btn btn-warning" role="button" aria-pressed="true"><i class="fa fa-shopping-cart"></i> <span class="badge badge-light">{{ count($cart)}}</span> </a></div>
         @else
            <div class="col-1"><a href="{{ route('carrito') }}" class="btn btn-warning" role="button" aria-pressed="true"><i class="fa fa-shopping-cart"></i></a></div> 
-       
       @endif
-        
-       
-
         <div class="col-md-11 card-header">{{ __('Nuestros Productos') }}</div>
-     
     </div>
     
 
@@ -44,7 +39,5 @@
 
 
                     </div>
-               
-   
-</div>
+    </div>
 @endsection
