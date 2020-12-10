@@ -6,8 +6,9 @@
     <div class="container">
         <div class="center fadeInDown">
             <h2>Trabajos Recientes</h2>
-            <p class="lead">La Red Humanitaria es una asociación de organizaciones de la sociedad civil dedicada a la
-                respuesta de emergencia dentro del proceso migratorio</p>
+            <p class="lead">Mision en la ruta de caminantes: 21000 raciones de alimentos distribuidas en 8 puntos humanitarias.
+                La Red Humanitaria es una asociación de organizaciones de la sociedad civil dedicada a la
+                respuesta de emergencia dentro del proceso migratorio. La Red Humanitaria es una asociación sin ánimo de lucro que trabaja para dignificar la vida de las personas migrantes y refugiadas, venezolanas y retornadas, bajo el principio de humanidad y el reconocimiento de un enfoque diferencial. </p>
         </div>
     </div>
     <div class="container">
@@ -73,7 +74,7 @@
                     </div>
                     <div class="media-body">
                         <h3 class="media-heading">Asesoria Juridica</h3>
-                        <p>Este es un servicio gratiuto para migrantes y retornados colombianos</p>
+                        <p>Este es un servicio gratuito para migrantes y retornados colombianos</p>
                     </div>
                 </div>
             </div>
@@ -148,7 +149,7 @@
     <div class="container">
         <div class="center fadeInDown">
             <h2>Testimonios</h2>
-            <p class="lead"> Algunos testimonios de las personas a las cuales se les habrindado ayuda </p>
+            <p class="lead"> Algunos testimonios de las personas a las cuales se les ha brindado ayuda </p>
         </div>
         <div class="testimonial-slider owl-carousel">
             <div class="single-slide">
@@ -177,8 +178,8 @@
                 </div>
                 <div class="content">
                     <img src="{{ asset('web/images/review.png') }}" alt="">
-                    <p>Somos estudiantes pero no pudimos seguir asi que salimos a trabajar.</p>
-                    <h4>- Carlos, Luis, jorge, andres</h4>
+                    <p>Somos una familia numerosa y no teniamos que comer asi que salimos a trabajar.</p>
+                    <h4>- Carlos, Luis, jorge, andres, mis niños...</h4>
                 </div>
             </div>
             <div class="single-slide">
@@ -193,12 +194,12 @@
             </div>
             <div class="single-slide">
                 <div class="slide-img">
-                    <img src="{{ asset('web/images/testimonial7.JPEG') }}" alt="">
+                    <img src="{{ asset('web/images/testimonial7.jpeg') }}" alt="">
                 </div>
                 <div class="content">
                     <img src="{{ asset('web/images/review.png') }}" alt="">
-                    <p>Somos deportistas y decidimos caminar pero ha sido muy duro</p>
-                    <h4>- Maria, Manuel, Martha, Juan</h4>
+                    <p>Soy enfermera y decidi caminar pero ha sido muy duro</p>
+                    <h4>- Maria Sotelo</h4>
                 </div>
             </div>
             <div class="single-slide">

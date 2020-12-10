@@ -79,6 +79,11 @@ class ProductController extends Controller
         
     }
     public function aumentaritem($id){
+        $prod = Product::find($id);
+               $cart = session()->get('cart');
+       
+        if($cart[$id]['Cantidad']==$prod->stock){
+            return redirect()->back()->with('flash','No hay mas stock');
         
         $productos = Product::find($id);
         $cart = session()->get('cart');
@@ -94,6 +99,7 @@ class ProductController extends Controller
         }
 
     }
+}
     public function addTocart($id)
     {
         $productos = Product::find($id);
@@ -146,9 +152,17 @@ class ProductController extends Controller
     public function create(request $request)
     {
         $request->validate([
+            'nombre_producto' => 'required',
+            'stock'=> 'required',
+            'precio'=> 'required',
+            'descripcion_corta' => 'required',
+            'descripcion_larga'=> 'required',
+            'password'=> 'required|min:8|confirmed',
             'file'=> 'required|image|max:2048'
-        ]); 
+        ]);
+// hasta el momento no funciona el required. revisarlo
 
+      
         $images = $request->file('file')->store('public/imagenes');
         $url = Storage::url($images);
         $producto = new Product;

@@ -61,8 +61,8 @@ class UserController extends Controller
     }
 
     public function buscarUsuario(Request $request){
-
-        $tem = $request->get('search');
+    //    dd($request->get('search'));
+         $tem = $request->get('search');
             if (!empty($tem)){
                 $search = $request->get('search');
                 $usuarios = User::where('dni', $search)->paginate(1);

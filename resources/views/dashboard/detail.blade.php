@@ -5,7 +5,6 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                {{-- <div class="card-header">{{ __('Detalle del producto') }}</div> --}}
 
                 <div class="card-body">
                     @if (session('status'))
@@ -20,8 +19,6 @@
                           <tr>
                             <th>Producto</th>
                             <th>Detalles</th>
-                            {{-- <th>Precio</th> --}}
-                            {{-- <th>Cantidad</th> --}}
                             <th>Opciones</th>
                           </tr>
                         </thead>
@@ -46,10 +43,12 @@
                             <td  width="300px">
                              <a href="{{route('cart', $productos->id)}}" class="btn btn-primary" role="button" aria-pressed="true">ADD TO CART</a>
                             <a href="{{route('productos-tienda')}}" class="btn btn-dark" role="button" aria-pressed="true">Volver</a>
+                            @if ($cart)
+                            <a href="{{ route('carrito') }}" class="btn btn-warning" role="button" aria-pressed="true"><i class="fa fa-shopping-cart"></i> <span class="badge badge-light">{{ count($cart)}}</span> </a>
+                            @else
+                              <a href="{{ route('carrito') }}" class="btn btn-warning" role="button" aria-pressed="true"><i class="fa fa-shopping-cart"></i></a>
+                          @endif
 
-                            <a href="{{route('carrito')}}" class="btn btn-warning" role="button" aria-pressed="true"><i class="fa fa-shopping-cart"></i> <span class="badge badge-danger">{{ count($cart)}}</span></a>
-
-                            {{-- <div class="col-1 "><a style="display:flex" href="{{ route('carrito') }}" class="btn btn-warning" role="button" aria-pressed="true"> </a></div> --}}
                             </td>
                           </tr>
                          
