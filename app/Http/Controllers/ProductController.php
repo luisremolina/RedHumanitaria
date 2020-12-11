@@ -201,8 +201,14 @@ class ProductController extends Controller
     public function actualizar_producto(Request $request){
         
         $request->validate([
+            'nombre_producto' => 'required',
+            'stock'=> 'required',
+            'precio'=> 'required',
+            'descripcion_corta' => 'required',
+            'descripcion_larga'=> 'required',
             'file'=> 'required|image|max:2048'
-        ]); 
+
+        ]);
 
         $images = $request->file('file')->store('public/imagenes');
         $url = Storage::url($images);
