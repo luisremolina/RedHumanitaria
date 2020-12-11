@@ -157,8 +157,9 @@ class ProductController extends Controller
             'precio'=> 'required',
             'descripcion_corta' => 'required',
             'descripcion_larga'=> 'required',
-            'password'=> 'required|min:8|confirmed',
+            // 'password'=> 'required|min:8|confirmed',
             'file'=> 'required|image|max:2048'
+
         ]);
 // hasta el momento no funciona el required. revisarlo
 

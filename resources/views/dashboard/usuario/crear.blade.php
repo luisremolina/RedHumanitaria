@@ -27,7 +27,7 @@
                             <input required id="dni" type="text" class="form-control" name="dni" autofocus>
             
                         </div>
-                        {{-- <div><button type="submit" class="btn"><i class="fa fa-search"></i></button></div> --}}
+                        
                     </div>
 
                     <div class="form-group row">

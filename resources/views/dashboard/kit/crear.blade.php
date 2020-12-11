@@ -1,7 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
+   
     <div class="container">
+      <div class="col-8">
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+      </div>
     {{-- @include('alerta') --}}
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -9,7 +21,7 @@
                 @csrf
                 <div class="form-group">
                   <label for="nombre_kit">Nombre kit</label>
-                  <input type="text" name="nombre_kit" class="form-control" id="nombre_kit" placeholder="Nombre kit">
+                  <input required type="text" name="nombre_kit" class="form-control" id="nombre_kit" placeholder="Nombre kit">
                 </div>
                 <div class="form-group">
                   <label for="elementos_kit">Elementos del kit</label>
