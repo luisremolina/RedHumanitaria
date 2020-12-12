@@ -91,7 +91,7 @@ class ProductController extends Controller
         }
 
     }
-}
+
     public function addTocart($id)
     {
         $productos = Product::find($id);
