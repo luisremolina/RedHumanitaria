@@ -16,15 +16,15 @@ class KitController extends Controller
 
     public function guardar_kit(Request $request){
         
-        $request->validate([
-            'nombre_kit' => 'required',
-            'elementos_kit'=> 'required',
-            'cantidad'=> 'required',
-            'descripcion' => 'required',
-            'inventario_id'=> 'required',
-            // 'password'=> 'required|min:8|confirmed',
-            // 'file'=> 'required|image|max:2048'
-        ]);
+        // $request->validate([
+        //     'nombre_kit' => 'required',
+        //     'elementos_kit'=> 'required',
+        //     'cantidad'=> 'required',
+        //     'descripcion' => 'required',
+        //     'inventario_id'=> 'required',
+        //     // 'password'=> 'required|min:8|confirmed',
+        //     // 'file'=> 'required|image|max:2048'
+        // ]);
 
         $kit = new Tipo_kit;
         $kit->nombre_kit = $request->nombre_kit;

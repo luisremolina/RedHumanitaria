@@ -29,11 +29,11 @@
                 </div>
                 <div class="form-group">
                   <label for="cantidad">Cantidad</label>
-                  <input type="number" name="cantidad" class="form-control" id="cantidad" placeholder="Cantidad">
+                  <input required type="number" name="cantidad" class="form-control" id="cantidad" placeholder="Cantidad">
                 </div>
                 <div class="form-group">
                   <label for="descripcion">Descripcion</label>
-                  <textarea class="form-control" name="descripcion"  id="descripcion" placeholder="Descripcion del kit" cols="30" rows="5"></textarea>
+                  <textarea required class="form-control" name="descripcion"  id="descripcion" placeholder="Descripcion del kit" cols="30" rows="5"></textarea>
                 </div>
                 <div class="form-group">
                   <label for="descripcion">Inventario</label>
