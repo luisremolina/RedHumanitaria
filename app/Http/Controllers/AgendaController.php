@@ -14,14 +14,7 @@ class AgendaController extends Controller
 
     public function validarFecha ($fecha, $hora_inicial, $hora_final){
        
-        // dd("fecha = " + $fecha + " Hora inicial = " + $hora_inicial + " Hora final = " + $hora_final);
-        // $agenda = Agenda::select("*")
-        // ->whereDate('fecha', $fecha) //COMPARA CON TODOS
-        // ->whereBetween('hora_inicial', [$hora_inicial, $hora_final]) //COMPARA CON TODOS
-        // ->orWhereBetween('hora_final', [$hora_inicial, $hora_final]) //COMPARA CON TODOS
-        // ->first();
-        // // dd($hora_final);
-        // return $agenda == null ? true : false;
+    
 
       
 

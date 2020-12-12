@@ -9,11 +9,9 @@ class Tipo_kit extends Model
     protected $table = "Tipokit";
 
     protected $fillable = [
-        'nombre_kit',
+        'nombre',
         'elementos_kit',
-        'cantidad',
-        'descripcion',
-        'inventario_id',
+        'descripcion'
     ];
 
 }

@@ -7,7 +7,7 @@
         @csrf
         <div class="form-group">
           <label for="nombre_inventario">nombre inventario</label>
-          <input type="text" id="nombre_inventario" class="form-control" name="nombre" value="{{$inventario->nombre}}">
+          <input  readonly=»readonly» type="text" id="nombre_inventario" class="form-control" name="nombre" value="{{$inventario->nombre}}">
         </div>
         <div class="form-group">
           <label for="stock">Stock</label>
@@ -21,11 +21,6 @@
           <label for="salida">Salida</label>
           <input name="salida" type="number" min="0" required class="form-control" id="salida" value="0">
         </div>
-        {{-- <div class="form-group">
-          <label for="stock">Stok</label>
-          <input name="stock" type="number" class="form-control" id="stock" value="{{$inventario->stock}}">
-        </div> --}}
-        
         <div class="form-group">
           <button type="submit" class="btn btn-primary">Actualizar</button>
           <a href="{{ route('inventario.registrados' ) }}" class="btn btn-secondary">Ver Registrados</a>

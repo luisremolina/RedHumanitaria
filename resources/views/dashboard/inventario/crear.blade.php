@@ -7,16 +7,22 @@
         @csrf
         <div class="form-group">
           <label for="nombre_inventario">Nombre Inventario</label>
-          <input type="text" id="nombre_inventario" class="form-control" name="nombre" placeholder="Nombre del inventario">
+          <select class="form-control" name="nombre_inventario" >
+
+              @foreach ($inv as $i)
+                 <option name="nombre" value="{{$i->id}}"> {{$i->nombre}} </option>
+              @endforeach
+
+          </select>
         </div>
         <div class="form-group">
           <label for="Entrada">Cantidad</label>
-          <input name="entrada" type="number" class="form-control" id="Entrada" placeholder="Cantidad entrada">
+          <input min="1" required name="entrada" type="number" class="form-control" id="Entrada" placeholder="Cantidad entrada">
         </div>
 
         <div class="form-group">
           <label for="descripcion">Descripcion</label>
-          <textarea class="form-control" name="descripcion"  id="descripcion" placeholder="Descripcion  del producto" cols="30" rows="5"></textarea>
+          <textarea required class="form-control" name="descripcion"  id="descripcion" placeholder="Descripcion  del producto" cols="30" rows="5"></textarea>
         </div>
         
         <div class="form-group">

@@ -15,12 +15,9 @@ class CreateTipokitTable extends Migration
     {
         Schema::create('tipokit', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre_kit');
+            $table->string('nombre')->unique();
             $table->string('elementos_kit');
-            $table->unsignedInteger('cantidad');
             $table->string('descripcion');
-            $table->unsignedBigInteger('inventario_id')->unsigned();
-            $table->foreign('inventario_id')->references('id')->on('inventario')->onDelete('cascade');
             $table->timestamps();
         });
     }

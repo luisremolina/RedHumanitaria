@@ -67,7 +67,7 @@ Route::post('/kit/guardar', 'KitController@guardar_kit')->name('kit.guardar');
 
 Route::get('/kit/registrados', 'KitController@tabla_kit')->name('kit.registrados');
 
-Route::get('/kit/{id}/editar', 'KitController@editar_kit')->name('kit.editar');
+Route::get('/kit/editar/{id}', 'KitController@editar_kit')->name('kit.editar');
 
 Route::post('/actualizar/kit/{id}', 'KitController@actualizar_kit')->name('kit.actualizar');
 
