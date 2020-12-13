@@ -33,11 +33,11 @@
                   <input required type="number" name="precio" class="form-control" id="precio" placeholder="Precio">
                 </div>
                 <div class="form-group">
-                  <label for="descripcion_corta">Descripcion corta</label>
+                  <label for="descripcion_corta">ESpecificaciones</label>
                   <textarea required class="form-control" name="descripcion_corta"  id="descripcion_corta" placeholder="Descripcion Corta del producto" cols="30" rows="5"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="descripcion_larga">Descripcion larga</label>
+                    <label for="descripcion_larga">Caracteristicas</label>
                     <textarea required class="form-control" name="descripcion_larga"  id="descripcion_larga" placeholder="Descripcion larga del producto" cols="30" rows="5"></textarea>
                   </div>
                   <div class="form-group">

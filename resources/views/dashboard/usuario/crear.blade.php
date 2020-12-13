@@ -24,7 +24,7 @@
                         <label for="dni" class="col-md-4 col-form-label text-md-right">{{ __('DNI') }}</label>
             
                         <div class="col-md-6">
-                            <input required id="dni" type="text" class="form-control" name="dni" autofocus>
+                            <input required id="dni" max="10" type="text" class="form-control" name="dni" autofocus>
             
                         </div>
                         
@@ -54,7 +54,7 @@
                         <label for="telefono" class="col-md-4 col-form-label text-md-right">{{ __('Telefono') }}</label>
 
                         <div class="col-md-6">
-                            <input required id="telefono" min="0" type="number" class="form-control" name="telefono" autofocus>
+                            <input required id="telefono" min="0" max="10" type="number" class="form-control" name="telefono" autofocus>
 
                         </div>
                     </div>
@@ -62,7 +62,7 @@
                         <label for="edad" class="col-md-4 col-form-label text-md-right">{{ __('Edad') }}</label>
 
                         <div class="col-md-6">
-                            <input required id="edad" min="0" type="number" class="form-control" name="edad" autofocus>
+                            <input required id="edad" min="0" max="10" type="number" class="form-control" name="edad" autofocus>
 
                         </div>
                     </div>
