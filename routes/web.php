@@ -107,9 +107,19 @@ Route::get('/productos-tienda', 'ProductController@index2')->name('productos-tie
 
 //////////////////////////////// DOM PDF ///////////////////////////////
 
-Route::get('/pdf', 'PDFController@PDF')->name('descargaPDF');
+Route::get('/pdf-de-productos', 'PDFController@PDFproducto')->name('pdf-producto');
 
-Route::get('/pdfUsuarios', 'PDFController@PDFusuarios')->name('informeUsuarios');
+Route::get('/pdf-de-Usuarios', 'PDFController@PDFuser')->name('pdf-user');
+
+Route::get('/pdf-de-donaciones', 'PDFController@PDFdonation')->name('pdf-donacion');
+
+Route::get('/pdf-de-kit', 'PDFController@PDFkit')->name('pdf-kit');
+
+Route::get('/pdf-de-inventario', 'PDFController@PDFinventary')->name('pdf-inventario');
+
+Route::get('/PDF-De-todos-los-informes', 'PDFController@todos')->name('allinformes');
+
+
 
 /////////////////////////////imagenes////////////////////////////////////////
 

@@ -20,17 +20,24 @@ class AgendaController extends Controller
     //   dd($date);
       if ($date == null){
           return true;
+          
       }else{
-        dd($date->hora_inicial);
-        dd($date->hora_inicial >= $hora_inicial && $date->hora_inicial <= $hora_final || 
-        $date->hora_final > $hora_inicial && $date->hora_final < $hora_final);
-            
-            if($date->hora_inicial > $hora_inicial && $date->hora_inicial < $hora_final || 
-            $date->hora_final > $hora_inicial && $date->hora_final < $hora_final ){
+        // dd($date->hora_inicial . " " . $date->hora_final."HORA LLEGADA". $hora_inicial." ".$hora_final);
+        // dd(
+        //     ( $date->hora_inicial >= $hora_inicial && $date->hora_inicial <= $hora_final ) &&
+        
+        //     ( $date->hora_final >= $hora_inicial && $date->hora_final <= $hora_final)  ) ;
+            // $vari = ( $date->hora_inicial >= $hora_inicial && $date->hora_inicial <= $hora_final ); 
+            // $vari2 =  ($date->hora_final >= $hora_inicial && $date->hora_final <= $hora_final );
+            // dd($vari ." y la segunda es ". $vari2);
+            if(
+                ($date->hora_inicial >= $hora_inicial && $date->hora_inicial <= $hora_final) == false && 
+                ($date->hora_final >= $hora_inicial && $date->hora_final <= $hora_final ) == false  ){
+                   
+                return true;
+            }else{
                 return false;
-        }else{
-            return true;
-        }
+            }
 
       }
     
