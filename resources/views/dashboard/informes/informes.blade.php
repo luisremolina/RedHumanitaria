@@ -10,7 +10,7 @@
           </div>
           <br>
           <div class="col-4">
-            <a class="btn btn-success mr-3" href="{{ route('informeDonantes') }}" target="_blank">Descargar PDF</a>
+            <a class="btn btn-success mr-3" href="{{ route('informes') }}" target="_blank">Descargar PDF</a>
         </div>
         <br>
         <div class="col-4">
@@ -18,6 +18,4 @@
            </div>
         </div>
       
-       
-    
 @endsection

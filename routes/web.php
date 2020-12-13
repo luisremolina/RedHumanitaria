@@ -110,7 +110,7 @@ Route::get('/productos-tienda', 'ProductController@index2')->name('productos-tie
 Route::get('/pdf', 'PDFController@PDF')->name('descargaPDF');
 
 Route::get('/pdfUsuarios', 'PDFController@PDFusuarios')->name('informeUsuarios');
-Route::get('/pdfDonantes', 'InformesController@PDFdonantes')->name('informeDonantes');
+Route::get('/pdfDonantes', 'InformesController@PDFdonantes')->name('informes');
 
 /////////////////////////////imagenes////////////////////////////////////////
 
