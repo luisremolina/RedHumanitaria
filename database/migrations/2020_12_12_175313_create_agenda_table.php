@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTipokitTable extends Migration
+class CreateAgendaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class CreateTipokitTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipokit', function (Blueprint $table) {
+        Schema::create('agenda', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre')->unique();
-            $table->string('elementos_kit');
-            $table->string('descripcion');
+            $table->integer("usuario_id");
+            $table->date("fecha");
+            $table->string("hora_inicial");
+            $table->string("hora_final");
+            $table->text("descripcion");
+            $table->string("estado")->default(1);
             $table->timestamps();
         });
     }
@@ -29,6 +32,6 @@ class CreateTipokitTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipokit');
+        Schema::dropIfExists('agenda');
     }
 }
