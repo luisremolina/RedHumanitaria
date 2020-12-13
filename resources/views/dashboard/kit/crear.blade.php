@@ -30,12 +30,31 @@
 
                 <div class="form-group">
                   <label for="elementos_kit">Elementos del kit</label>
+<<<<<<< HEAD
                   <textarea required name="elementos_kit" class="form-control" id="elementos_kit" cols="30" rows="3" placeholder="Elementos del kit"></textarea>
+=======
+                  <textarea name="elementos_kit" class="form-control" id="elementos_kit" cols="30" rows="3" placeholder="Elementos del kit"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="cantidad">Cantidad</label>
+                  <input required type="number" name="cantidad" class="form-control" id="cantidad" placeholder="Cantidad">
+>>>>>>> cc28bbd06e2199780bf5ea19c79b2770e1dd4607
                 </div>
                
                 <div class="form-group">
                   <label for="descripcion">Descripcion</label>
                   <textarea required class="form-control" name="descripcion"  id="descripcion" placeholder="Descripcion del kit" cols="30" rows="5"></textarea>
+<<<<<<< HEAD
+=======
+                </div>
+                <div class="form-group">
+                  <label for="descripcion">Inventario</label>
+                  <select class="form-control" name="inventario_id" id="descripcion">
+                    @foreach ($inventario as $inv)
+                  <option value="{{$inv->id}}">{{$inv->nombre}}</option>    
+                    @endforeach
+                  </select>
+>>>>>>> cc28bbd06e2199780bf5ea19c79b2770e1dd4607
                 </div>
                 
                 <div class="form-group">

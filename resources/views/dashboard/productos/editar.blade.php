@@ -7,16 +7,16 @@
               <form action="{{ route('producto.actualizar', $producto->id ) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
-                  <label for="nombre_producto">Nombre producto</label>
-                <input type="text" name="nombre_producto" class="form-control" id="nombre_producto" value="{{ $producto->nombre}}">
+                  <label  for="nombre_producto">Nombre producto</label>
+                <input required type="text" name="nombre_producto" class="form-control" id="nombre_producto" value="{{ $producto->nombre}}">
                 </div>
                 <div class="form-group">
                   <label for="stock"> Stock </label>
-                  <input type="number" name="stock" class="form-control" id="stock" value="{{ $producto->stock}}">
+                  <input required type="number" name="stock" class="form-control" id="stock" value="{{ $producto->stock}}">
                 </div>
                 <div class="form-group">
                   <label for="precio">Precio</label>
-                  <input type="number" name="precio" class="form-control" id="precio" value="{{ $producto->precioActual}}">
+                  <input required type="number" name="precio" class="form-control" id="precio" value="{{ $producto->precioActual}}">
                 </div>
                 <div class="form-group">
                   <label for="descripcion_corta">Descripcion corta</label>
@@ -29,7 +29,7 @@
 
                   <div class="form-group">
                     <label for="imagen">URL Imagen</label>
-                    <input type="text" name="imagen" class="form-control" id="file" value="{{ $producto->imagen}}">
+                    <input required type="text" name="imagen" class="form-control" id="file" value="{{ $producto->imagen}}">
                     <input type="file" accept="image/*" name="file" class="form-control" id="file" value="{{ $producto->imagen}}">
                   </div>
 
