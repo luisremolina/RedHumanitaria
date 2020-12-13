@@ -3,13 +3,13 @@
 @section('content')
 
 <div class="container">
-    <h1 class=" text-center">¿Quienes Somos?</h1>
+    <h1 class=" text-center">Nosotros</h1>
     <div class="row">
         <div class="col-12 col-md-4 ">
             <img src="{{asset('web/images/mision.jpg')}}" class="img-fluid" alt="Responsive image">
         </div>
         <div class="col-12 col-md-7 ">
-            <p>La Red Humanitaria es una asociación sin ánimo de lucro que trabaja para dignificar la vida de las personas migrantes y refugiadas, venezolanas y retornadas, bajo el principio de humanidad y el reconocimiento de un enfoque diferencial. Sin negar en modo alguno el beneficio y nuestro trabajo hacia residentes en condición de vulnerabilidad. Busca articular puntos de apoyo que proporcionan servicios, albergue, alimentación, comunicación o información a la población que transita caminando y está comprometida con la población que tiene vocación de permanencia, para garantizar el acceso al ejercicio de sus derechos a nivel individual, comunitario y político. Gestionando proyectos que permitan un trabajo coordinado y pertinente.</p>
+            <p>La Red Humanitaria ess una asociación sin ánimo de lucro que trabaja para dignificar la vida de las personas migrantes y refugiadas, venezolanas y retornadas, bajo el principio de humanidad y el reconocimiento de un enfoque diferencial. Sin negar en modo alguno el beneficio y nuestro trabajo hacia residentes en condición de vulnerabilidad. Busca articular puntos de apoyo que proporcionan servicios, albergue, alimentación, comunicación o información a la población que transita caminando y está comprometida con la población que tiene vocación de permanencia, para garantizar el acceso al ejercicio de sus derechos a nivel individual, comunitario y político. Gestionando proyectos que permitan un trabajo coordinado y pertinente.</p>
         </div>
     </div>
     <hr>

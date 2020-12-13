@@ -41,7 +41,7 @@
                             
                             </td>
                             <td  width="300px">
-                             <a href="{{route('cart', $productos->id)}}" class="btn btn-primary" role="button" aria-pressed="true">ADD TO CART</a>
+                             <a href="{{route('cart', $productos->id)}}" class="btn btn-primary" role="button" aria-pressed="true">AÑADIR A CARRITO</a>
                             <a href="{{route('productos-tienda')}}" class="btn btn-dark" role="button" aria-pressed="true">Volver</a>
                             @if ($cart)
                             <a href="{{ route('carrito') }}" class="btn btn-warning" role="button" aria-pressed="true"><i class="fa fa-shopping-cart"></i> <span class="badge badge-light">{{ count($cart)}}</span> </a>

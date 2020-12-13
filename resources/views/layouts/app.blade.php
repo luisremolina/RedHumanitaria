@@ -80,10 +80,12 @@
 
                                 <a href="{{ route('inventario') }}" class="dropdown-item">Registrar Inventario</a>
 
-                                <a href="{{ route('kit') }}" class="dropdown-item">Crear kit</a>
+                                <a href="{{ route('kit') }}" class="dropdown-item">Detallar kit</a>
 
                                 <a href="{{ route('producto') }}" class="dropdown-item">Registrar Producto</a>
                                 <a href="{{ route('producto.registrados') }}" class="dropdown-item"> Ver Productos Registrados</a>
+                                
+                                <a href="{{ route('informeDonantes') }}" class="dropdown-item">Informes</a>
                                 
 
 

@@ -29,7 +29,7 @@
                                         <h6 class="card-text"> ${{$item->precioActual}} <span class="badge badge-danger">New</span></h6>
                                         <h6 class="card-text ml-4" style="text-decoration: line-through;"> ${{$item->precioAnterior}}</h6>
                                </div>
-                                <a style="font-size: 11px" href="{{route('cart', $item->id)}}" class="badge badge-primary">ADD TO CART</a>
+                                <a style="font-size: 11px" href="{{route('cart', $item->id)}}" class="badge badge-primary">ADD CAR</a>
                                 <a style="font-size: 11px" href="{{route('detalle', $item->id)}}" class="badge badge-dark">DETALLES</a>
                               </div>
                             </div>
