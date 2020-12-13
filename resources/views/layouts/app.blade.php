@@ -69,23 +69,25 @@
                                 
                                 <a href="{{ route('productos-tienda') }}" class="dropdown-item">Tienda virtual</a>
 
-                                <a href="{{ route('agenda') }}" class="dropdown-item">Agendar Cita</a>
+                                
 
                                 @if(auth()->user()->isAdmin())
+
+                                <a href="{{ route('agenda') }}" class="dropdown-item">Agendar Cita</a>
 
                                 <a href="{{ route('usuarios') }}" class="dropdown-item">Registrar Caminante</a>
 
                                 <a href="{{ route('usuarios.registrados') }}" class="dropdown-item">Usuarios Registrados
                                 </a>
 
-                                <a href="{{ route('inventario') }}" class="dropdown-item">Registrar Inventario</a>
+                                <a href="{{ route('inventario') }}" class="dropdown-item">Agregar Inventario</a>
 
-                                <a href="{{ route('kit') }}" class="dropdown-item">Crear kit</a>
+                                <a href="{{ route('kit.registrados') }}" class="dropdown-item">Crear Kits</a>
 
                                 <a href="{{ route('producto') }}" class="dropdown-item">Registrar Producto</a>
                                 <a href="{{ route('producto.registrados') }}" class="dropdown-item"> Ver Productos Registrados</a>
                                 
-
+                                <a href="{{ route('allinformes') }}" class="dropdown-item">Informes</a>
 
                                 @endif
 

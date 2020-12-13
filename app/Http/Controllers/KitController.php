@@ -16,28 +16,26 @@ class KitController extends Controller
 
     public function guardar_kit(Request $request){
         
-        // $request->validate([
-        //     'nombre_kit' => 'required',
-        //     'elementos_kit'=> 'required',
-        //     'cantidad'=> 'required',
-        //     'descripcion' => 'required',
-        //     'inventario_id'=> 'required',
-        //     // 'password'=> 'required|min:8|confirmed',
-        //     // 'file'=> 'required|image|max:2048'
-        // ]);
+        $request->validate([
+            'nombre_kit' => 'required',
+            'elementos_kit'=> 'required',
+            'cantidad'=> 'required',
+            'descripcion' => 'required',
+            'inventario_id'=> 'required',
+            // 'password'=> 'required|min:8|confirmed',
+            // 'file'=> 'required|image|max:2048'
+        ]);
 
         $kit = new Tipo_kit;
-        $kit->nombre_kit = $request->nombre_kit;
+        $kit->nombre = $request->name;
         $kit->elementos_kit = $request->elementos_kit;
-        $kit->cantidad = $request->cantidad;
         $kit->descripcion = $request->descripcion;
-        $kit->inventario_id = $request->inventario_id;
         $kit->save();
         return back()->with('flash', "Se ha guardado el kit con exito"); 
     }
 
     public function tabla_kit(){
-        $kit = Tipo_kit::paginate(1);
+        $kit = Tipo_kit::paginate(5);
        
         return view('dashboard.kit.tabla', compact("kit"));
     }
@@ -45,21 +43,19 @@ class KitController extends Controller
     public function editar_kit(Request $request){
 
         $kit = Tipo_kit::where('id',$request->id)->firstOrFail();
+        // dd($kit);
         $inventario = Inventario::all();
 
-        return view('dashboard.kit.editar',compact("kit", "inventario"));
+        return view('dashboard.kit.editar',compact("kit"));
 
     }
 
     public function actualizar_kit(Request $request){
         
         $kit = Tipo_kit::where('id',$request->id)->firstOrFail();
-
-        $kit->nombre_kit = $request->nombre_kit;
+        $kit->nombre = $request->name;
         $kit->elementos_kit = $request->elementos_kit;
-        $kit->cantidad = $request->cantidad;
         $kit->descripcion = $request->descripcion;
-        $kit->inventario_id = $request->inventario_id;
         $kit->save();
         return back()->with('flash', "Se ha actualizado el kit con exito"); 
     }

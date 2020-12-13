@@ -2,16 +2,17 @@
 
 @section('content')
     <div class="container">
+    <a href="{{ route('kit')}}" class="btn btn-primary"> Nuevo Kit </a>
+
         <div class="row justify-content-center">
           <h5 class="mb-4">REGISTROS DE KIT</h5>
             <div class="col-12 table-responsive">
               <table class="table">
                 <thead class="thead-dark">
                   <tr>
-                    <th>#</th>
-                    <th>Nombre kit</th>
+                    <th>Id kit</th>
+                    <th>Nombre </th>
                     <th>Elementos kit</th>
-                    <th>Cantidad</th>
                     <th>Descripcion</th>
                     <th>Fecha Ingreso</th>
                     <th>Opciones</th>
@@ -21,9 +22,8 @@
                   @foreach ($kit as $k)
                   <tr>
                   <th scope="row">{{$k->id}}</th>
-                    <td>{{$k->nombre_kit}}</td>
+                    <td>{{$k->nombre}}</td>
                     <td>{{$k->elementos_kit}}</td>
-                    <td>{{$k->cantidad}}</td>
                     <td>{{$k->descripcion}}</td>
                     <td>{{$k->created_at}}</td>
                     <td>
