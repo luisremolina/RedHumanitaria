@@ -14,7 +14,7 @@
                 <table class="table table-striped">
                     <thead class="thead-light">
                         <tr style="text-align:center;">
-                            <th >#</th>
+                            <th >Imagen</th>
                             <th >Descripcion</th>
                             <th >Cantidad</th>
                             <th >Precio Total</th>
