@@ -16,30 +16,35 @@ class AgendaController extends Controller
        
     
 
-      
+      $date = Agenda::select("*")->whereDate('fecha', $fecha)->first();
+    //   dd($date);
+      if ($date == null){
+          return true;
+      }else{
+        dd($date->hora_inicial);
+        dd($date->hora_inicial >= $hora_inicial && $date->hora_inicial <= $hora_final || 
+        $date->hora_final > $hora_inicial && $date->hora_final < $hora_final);
+            
+            if($date->hora_inicial > $hora_inicial && $date->hora_inicial < $hora_final || 
+            $date->hora_final > $hora_inicial && $date->hora_final < $hora_final ){
+                return false;
+        }else{
+            return true;
+        }
 
-        $agenda = Agenda::select("*")
-        ->whereDate('fecha', $fecha)
-        ->whereBetween('hora_inicial', [$hora_inicial, $hora_final])
-        ->orwhereBetween('hora_final', [$hora_inicial, $hora_final])
-        ->first();
-        return $agenda == null ? true : false;
+      }
+    
 
-        // $agendas = Agenda::select("*")->whereDate('fecha', $fecha)->first();
-        // // console.log($agendas->hora_inicial);
-        // dd($agendas);
-        // foreach($agendas as $agenda){
 
-        //     if ($agenda->hora_inicial >= $hora_inicial && $agenda->hora_final <= $hora_final) {
-        //         return false;
-        //     }else{
-        //         return true;
-        //     }
+        // $agenda = Agenda::select("*")
+        // ->whereDate('fecha', $fecha)
+        // ->whereBetween('hora_inicial', [$hora_inicial, $hora_final])
+        // ->orwhereBetween('hora_final', [$hora_inicial, $hora_final])
+        // ->first();
+        // return $agenda == null ? true : false;
 
-        // }
         
 
-        // return $agenda == null ? true : false;
 
     }
     public function listar(){
