@@ -79,17 +79,10 @@ class ProductController extends Controller
         
     }
     public function aumentaritem($id){
-<<<<<<< HEAD
-        $prod = Product::find($id);
-        $cart = session()->get('cart');
-       
-             if ($cart[$id]['Cantidad'] == $prod->stock){
-=======
         $productos = Product::find($id);
         $cart = session()->get('cart');
        
         if ($cart[$id]['Cantidad'] == $productos->stock){
->>>>>>> CopiaV3
             return redirect()->back()->with('flash','Tienes el maximo numero de stock');;
         }else{
             $cart[$id]['Cantidad']++;
@@ -97,13 +90,8 @@ class ProductController extends Controller
             return back();
         }
 
-<<<<<<< HEAD
-    }
-
-=======
     
 }
->>>>>>> CopiaV3
     public function addTocart($id)
     {
         $productos = Product::find($id);
