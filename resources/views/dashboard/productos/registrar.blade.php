@@ -22,22 +22,22 @@
                 @csrf
                 <div class="form-group">
                   <label for="nombre_producto">Nombre producto</label>
-                  <input required type="text" name="nombre_producto" class="form-control" id="nombre_producto" placeholder="Nombre del producto">
+                  <input required type="text" name="nombre_producto" maxlength="30" class="form-control" id="nombre_producto" placeholder="Nombre del producto">
                 </div>
                 <div class="form-group">
                   <label for="stock"> Stock </label>
-                  <input required type="number" name="stock" class="form-control" id="stock" placeholder="Stock del producto" min="1" max="6000">
+                  <input required type="number" name="stock" class="form-control"  maxlength="5" id="stock" placeholder="Stock del producto" min="0" max="10000">
                 </div>
                 <div class="form-group">
                   <label for="precio">Precio</label>
-                  <input required type="number" name="precio" class="form-control" id="precio" placeholder="Precio">
+                  <input required type="number" name="precio" class="form-control" min="1" maxlength="7" id="precio" placeholder="Precio" max="1000000">
                 </div>
                 <div class="form-group">
-                  <label for="descripcion_corta">Descripcion corta</label>
+                  <label for="descripcion_corta">Especificaciones</label>
                   <textarea required class="form-control" name="descripcion_corta"  id="descripcion_corta" placeholder="Descripcion Corta del producto" cols="30" rows="5"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="descripcion_larga">Descripcion larga</label>
+                    <label for="descripcion_larga">Características</label>
                     <textarea required class="form-control" name="descripcion_larga"  id="descripcion_larga" placeholder="Descripcion larga del producto" cols="30" rows="5"></textarea>
                   </div>
                   <div class="form-group">
