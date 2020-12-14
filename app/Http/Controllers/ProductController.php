@@ -79,10 +79,17 @@ class ProductController extends Controller
         
     }
     public function aumentaritem($id){
+<<<<<<< HEAD
         $prod = Product::find($id);
         $cart = session()->get('cart');
        
              if ($cart[$id]['Cantidad'] == $prod->stock){
+=======
+        $productos = Product::find($id);
+        $cart = session()->get('cart');
+       
+        if ($cart[$id]['Cantidad'] == $productos->stock){
+>>>>>>> CopiaV3
             return redirect()->back()->with('flash','Tienes el maximo numero de stock');;
         }else{
             $cart[$id]['Cantidad']++;
@@ -90,8 +97,13 @@ class ProductController extends Controller
             return back();
         }
 
+<<<<<<< HEAD
     }
 
+=======
+    
+}
+>>>>>>> CopiaV3
     public function addTocart($id)
     {
         $productos = Product::find($id);
@@ -191,31 +203,47 @@ class ProductController extends Controller
     }
 
     public function actualizar_producto(Request $request){
+        // dd($request->file);
+
+        if($request->file == null){
+            $producto = Product::where('id',$request->id)->firstOrFail();
+            $producto->nombre = $request->nombre_producto;
+            $producto->stock = $request->stock;
+            $producto->precioAnterior = $producto->precioActual;
+            $producto->precioActual = $request->precio;
+            $producto->descripcionCorta = $request->descripcion_corta;
+            $producto->descripcionLarga = $request->descripcion_larga;
+            $producto->save();
+            return back()->with('flash', "Se ha actualizado el producto con exito"); 
+        }else{
+            $request->validate([
+                'nombre_producto' => 'required',
+                'stock'=> 'required',
+                'precio'=> 'required',
+                'descripcion_corta' => 'required',
+                'descripcion_larga'=> 'required',
+                'file'=> 'required|image|max:2048'
+    
+            ]);
+    
+            
+            $images = $request->file('file')->store('public/imagenes');
+            $url = Storage::url($images);
+    
+            $producto = Product::where('id',$request->id)->firstOrFail();
+    
+            $producto->nombre = $request->nombre_producto;
+            $producto->stock = $request->stock;
+            $producto->precioAnterior = $producto->precioActual;
+            $producto->precioActual = $request->precio;
+            $producto->descripcionCorta = $request->descripcion_corta;
+            $producto->descripcionLarga = $request->descripcion_larga;
+            $producto->imagen = $url;
+            $producto->save();
+            return back()->with('flash', "Se ha actualizado el producto con exito"); 
+        }
+
         
-        $request->validate([
-            'nombre_producto' => 'required',
-            'stock'=> 'required',
-            'precio'=> 'required',
-            'descripcion_corta' => 'required',
-            'descripcion_larga'=> 'required',
-            'file'=> 'required|image|max:2048'
-
-        ]);
-
-        $images = $request->file('file')->store('public/imagenes');
-        $url = Storage::url($images);
-
-        $producto = Product::where('id',$request->id)->firstOrFail();
-
-        $producto->nombre = $request->nombre_producto;
-        $producto->stock = $request->stock;
-        $producto->precioAnterior = $producto->precioActual;
-        $producto->precioActual = $request->precio;
-        $producto->descripcionCorta = $request->descripcion_corta;
-        $producto->descripcionLarga = $request->descripcion_larga;
-        $producto->imagen = $url;
-        $producto->save();
-        return back()->with('flash', "Se ha actualizado el producto con exito"); 
     }
 
 }

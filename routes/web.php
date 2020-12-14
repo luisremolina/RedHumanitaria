@@ -132,7 +132,11 @@ Route::post('/imagenes-uploader-store/{id}', 'ProductController@store')->name('i
 
 Route::get('/agenda', 'AgendaController@index')->name('agenda');
 
+Route::get('/agenda-Registradas', 'AgendaController@registroCitas')->name('agenda.regis');
+
 Route::post('/agenda/guardar', 'AgendaController@guardar');
 
 Route::get('/agenda/listar', 'AgendaController@listar');
+
+Route::get('/agenda/{id}/borrar', 'AgendaController@eliminar')->name('borrar.cita');
 

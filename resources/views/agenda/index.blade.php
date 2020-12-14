@@ -2,7 +2,16 @@
 
 @section('content')
     <div class="container">
-        <div id='calendar'></div>
+        <div class="row mb-5">
+            <div class="col">
+                     <a class="btn btn-warning" href="{{ route('agenda.regis')}}">VER TODAS LAS CITAS REGISTRADAS</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                     <div id='calendar'></div>
+            </div>
+        </div>
     </div>
 
     <div class="modal fade" data-backdrop="static" tabindex="-1" id="agenda_modal">
@@ -33,7 +42,7 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="tiempo">Tiempo Estimado</label>
-                                <select name="tiempo" id="tiempo" class="form-control">
+                                <select required name="tiempo" id="tiempo" class="form-control">
                                     <option value="1">Media Hora </option>
                                     <option value="2">Una hora </option>
                                     <option value="3">Dos horas </option>
@@ -44,11 +53,11 @@
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
-                                <label for="user">Uusario</label>
-                                <select name="users" id="users" class="form-control">
-                                    <option value="">Seleccione </option>
+                                <label for="user">Usuario</label>
+                                <select required name="users" id="users" class="form-control">
+                                    <option value="0">Seleccione </option>
                                     @foreach ($usuarios as $user)
-                                <option value="{{$user->id}}">{{$user->nombres}} </option> 
+                                     <option value="{{$user->id}}">{{$user->nombres}} </option> 
                                     @endforeach
                                 </select>
                             </div>
@@ -56,7 +65,7 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="descripcion">Descripcion</label>
-                                <textarea class="form-control" name="txtdescripcion" id="txtdescripcion" cols="30" rows="10"></textarea>
+                                <textarea required class="form-control" name="txtdescripcion" id="txtdescripcion" cols="30" rows="10"></textarea>
                             </div>
                         </div>
                     </div>
@@ -104,7 +113,7 @@ $(function(){
             selectable: true,
             selectMirror: true,
             select: function(arg) {
-                // console.log(arg.start);
+                
                 let m = moment(arg.start).format("YYYY-MM-DD");
                 let hora_inicial = moment(arg.start).format("HH:mm:ss");
                 $("#txtfecha").val(m);
@@ -112,15 +121,15 @@ $(function(){
                 $("#agenda_modal").modal();
                 calendar.unselect()
             },
-            eventClick: function(info) {
-                // alert("evento" + info.event.start);
-                // console.log(info.event.extendedProps);
-                // alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
-                // alert('View: ' + info.view.type);
+            // eventClick: function(info) {
+            //     alert("evento" + info.event.start);
+            //     console.log(info.event.extendedProps);
+            //     alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
+            //     alert('View: ' + info.view.type);
 
-                // change the border color just for fun
-                // info.el.style.borderColor = 'red';
-            },
+            //     change the border color just for fun
+            //     info.el.style.borderColor = 'red';
+            // },
             editable: true,
             events: "/agenda/listar",
             
@@ -131,7 +140,7 @@ $(function(){
     function limpiar(){
         $("#agenda_modal").modal('hide');
         $("#txtfecha").val("");
-        $("#tiempo").val("");
+        // $("#tiempo").val("");
         $("#hora_inicial").val("");
         $("#users").val("");
         $("#txtdescripcion").val("");
@@ -139,6 +148,18 @@ $(function(){
 
     function guardar(){
 
+        var descripcion = document.getElementById('txtdescripcion').value;
+       
+        if(descripcion.length == 0) {
+            alert('No has escrito nada en la descripcion');
+            return;
+        }
+         var usuario = document.getElementById('users').value;
+        if(usuario == 0) {
+            alert('Porfavor selecciona un usuario');
+            return;
+        }
+        
         var fd = new FormData(document.getElementById("formulario_agenda"))
         let fecha = $("#txtfecha").val();
         let tiempo2 = $("#tiempo").val();
