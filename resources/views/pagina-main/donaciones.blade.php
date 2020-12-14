@@ -73,12 +73,16 @@
 
                         <div class="form-group">
                             <div class="col-md-12 text-center">
-                             <button type="submit" class="btn btn-primary btn-lg">Donar</button> 
-                                {{-- <a class="btn btn-primary btn-lg" target="_blank" href="https://www.nequi.com.co/">Donar
+                                <button type="submit" class="btn btn-primary btn-lg black-background" value="Text" >Enviar</button>
+<br>
+                                 <a href="{{route('opciondonar')}}" text-center>Donar</a>
+                             {{-- <button type="submit" class="btn btn-primary btn-lg" >Enviar</button>  --}}
+                                 {{-- <a class="btn btn-secondary" target="_blank" href="https://www.nequi.com.co/">Donar
                                     con nequi</a>
-                                <a class="btn btn-primary btn-lg" target="_blank"
-                                    href="https://www.paypal.com/co/home">Donar con paypal</a> --}}
-                            </div>
+                                <a class="btn btn-secondary" target="_blank"
+                                    href="https://www.paypal.com/co/home">Donar con paypal</a> 
+                                     --}} 
+                                </div>
                         </div>
                     </fieldset>
                 </form>
@@ -89,3 +93,15 @@
 
 
 @endsection
+
+{{-- 
+<button type="button" class="btn btn-primary">Primary</button>
+                                    <button type="button" class="btn btn-secondary">Secondary</button>
+                                    <button type="button" class="btn btn-success">Success</button>
+                                    <button type="button" class="btn btn-danger">Danger</button>
+                                    <button type="button" class="btn btn-warning">Warning</button>
+                                    <button type="button" class="btn btn-info">Info</button>
+                                    <button type="button" class="btn btn-light">Light</button>
+                                    <button type="button" class="btn btn-dark">Dark</button>
+                                    
+                                    <button type="button" class="btn btn-link">Link</button> --}}

@@ -19,6 +19,7 @@ Route::get('/servicios', 'InicioController@services')->name('servicios');
 Route::get('/Sobre-Nosotros', 'InicioController@about')->name('about');
 
 Route::get('/donacion', 'DonacionController@index')->name('donacion');
+Route::get('/opciondonar', 'DonacionController@opciondonar')->name('opciondonar');
 
 Route::post('/donacion/guardar', 'DonacionController@guardar_donacion')->name('donacion.guardar');
 

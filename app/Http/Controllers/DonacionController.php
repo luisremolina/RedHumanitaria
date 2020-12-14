@@ -24,4 +24,8 @@ class DonacionController extends Controller
         $donaciones -> save();
         return back();
     }
+    public function opciondonar()
+    {
+        return view('pagina-main.opciondonar');
+    }
 }
