@@ -16,7 +16,7 @@
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                             
                             <div class="col-md-8">
-                                <input id="fname" required name="nombres" type="text" placeholder="Nombre"
+                                <input id="fname" required name="nombres"  type="text" maxlength="30" placeholder="Nombre"
                                     class="form-control">
                             </div>
                         </div>
@@ -24,14 +24,14 @@
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                             <div class="col-md-8">
-                                <input id="lname" required name="apellidos" type="text" placeholder="Apellidos"
+                                <input id="lname" required name="apellidos" type="text" maxlength="30" placeholder="Apellidos"
                                     class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                             <div class="col-md-8">
-                                <input id="cc" required name="cc" type="number" placeholder="DNI" class="form-control">
+                                <input id="cc" required name="cc" type="number" min="0" max="9999999999" placeholder="DNI" class="form-control">
                             </div>
                         </div>
 
@@ -48,7 +48,7 @@
                             <span class="col-md-1 col-md-offset-2 text-center"><i
                                     class="fa fa-phone-square bigicon"></i></span>
                             <div class="col-md-8">
-                                <input id="phone" required name="telefono" type="number" placeholder="Telefono"
+                                <input id="phone" required name="telefono" type="number" min="0" max="9999999999" placeholder="Telefono"
                                     class="form-control">
                             </div>
                         </div>
@@ -57,7 +57,7 @@
                             <span class="col-md-1 col-md-offset-2 text-center">
                                 <i class="fa fa-money"></i></span>
                             <div class="col-md-8">
-                                <input id="valor" required name="valor" type="number"
+                                <input id="valor" required name="valor" type="number" min="1" 
                                     placeholder="Valor estimado de donacion" class="form-control">
                             </div>
                         </div>
