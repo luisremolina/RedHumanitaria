@@ -34,11 +34,11 @@
                 </div>
                 <div class="form-group">
                   <label for="descripcion_corta">Especificaciones</label>
-                  <textarea required class="form-control" name="descripcion_corta"  id="descripcion_corta" placeholder="Descripcion Corta del producto" cols="30" rows="5"></textarea>
+                  <textarea required class="form-control" name="descripcion_corta"  id="descripcion_corta" placeholder="Descripcion Corta del producto" cols="30" rows="5" maxlength="150"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="descripcion_larga">Características</label>
-                    <textarea required class="form-control" name="descripcion_larga"  id="descripcion_larga" placeholder="Descripcion larga del producto" cols="30" rows="5"></textarea>
+                    <textarea required class="form-control" name="descripcion_larga"  id="descripcion_larga" placeholder="Caracteristicas del producto" cols="30" rows="5" maxlength="300"></textarea>
                   </div>
                   <div class="form-group">
                     <label for="imagen">URL Imagen</label>
