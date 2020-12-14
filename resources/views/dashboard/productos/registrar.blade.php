@@ -41,7 +41,7 @@
                     <textarea required class="form-control" name="descripcion_larga"  id="descripcion_larga" placeholder="Caracteristicas del producto" cols="30" rows="5" maxlength="300"></textarea>
                   </div>
                   <div class="form-group">
-                    <label for="imagen">URL Imagen</label>
+                    <label for="file">URL Imagen</label>
                     <input required type="file" name="file" class="form-control" id="file" accept="image/*" >
                     @error('file')
                 <small>{{$message}}</small>
