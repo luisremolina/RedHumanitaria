@@ -87,7 +87,7 @@ class ProductController extends Controller
         }else{
             $cart[$id]['Cantidad']++;
             session()->put('cart', $cart);
-            return redirect()->back();
+            return back();
         }
 
     
