@@ -61,7 +61,5 @@
 
     <script>
       
-
-        // $("#miImagen").attr('src', 'miruta/' + td[4].innerText)
     </script>
 @endsection
