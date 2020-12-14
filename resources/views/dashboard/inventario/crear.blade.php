@@ -17,12 +17,12 @@
         </div>
         <div class="form-group">
           <label for="Entrada">Cantidad</label>
-          <input min="1" required name="entrada" type="number" class="form-control" id="Entrada" placeholder="Cantidad entrada">
+          <input min="1" required name="entrada" type="number" max="9999999" maxlength="7" class="form-control" id="Entrada" placeholder="Cantidad entrada">
         </div>
 
         <div class="form-group">
           <label for="descripcion">Descripcion</label>
-          <textarea required class="form-control" name="descripcion"  id="descripcion" placeholder="Descripcion  del producto" cols="30" rows="5"></textarea>
+          <textarea required class="form-control" name="descripcion" maxlength="150" id="descripcion" placeholder="Descripcion corta del producto" cols="30" rows="5"></textarea>
         </div>
         
         <div class="form-group">
