@@ -18,7 +18,7 @@ class ProductSeeder extends Seeder
         Product::create([
 
             'nombre' => "camisa",
-            'stock' => 200,
+            'stock' => 100,
             'precioActual' => 12000,
             'precioAnterior' => 15000,
             'porcentajeDescuento' => 10,
