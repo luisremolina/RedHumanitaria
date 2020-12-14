@@ -6,7 +6,7 @@
         <div class="row">
            <div class="col-4">
               <a class="btn btn-primary mr-3" href="{{ route('usuarios') }}" >Nuevo Usuario</a>
-              <a class="btn btn-success mr-3" href="{{ route('informeUsuarios') }}" target="_blank">Descargar PDF</a>
+              {{-- <a class="btn btn-success mr-3" href="{{ route('informeUsuarios') }}" target="_blank">Descargar PDF</a> --}}
           </div>
           <form action="{{ route('buscar-usuario') }}" method="get">
             @csrf

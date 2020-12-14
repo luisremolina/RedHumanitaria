@@ -11,25 +11,27 @@ class AgendaController extends Controller
         $usuarios = User::all();
         return view('agenda.index', compact('usuarios'));
     }
+    public function registroCitas (Request $request){
+        $agenda = Agenda::all();
+        return view('agenda.tabla', compact('agenda'));
+    }
+
+    public function eliminar (Request $request){
+
+        $agenda = Agenda::where('id',$request->id)->first();
+        $agenda->delete();
+        return back();
+    }
 
     public function validarFecha ($fecha, $hora_inicial, $hora_final){
        
-    
-
       $date = Agenda::select("*")->whereDate('fecha', $fecha)->first();
-    //   dd($date);
+
       if ($date == null){
           return true;
           
       }else{
-        // dd($date->hora_inicial . " " . $date->hora_final."HORA LLEGADA". $hora_inicial." ".$hora_final);
-        // dd(
-        //     ( $date->hora_inicial >= $hora_inicial && $date->hora_inicial <= $hora_final ) &&
-        
-        //     ( $date->hora_final >= $hora_inicial && $date->hora_final <= $hora_final)  ) ;
-            // $vari = ( $date->hora_inicial >= $hora_inicial && $date->hora_inicial <= $hora_final ); 
-            // $vari2 =  ($date->hora_final >= $hora_inicial && $date->hora_final <= $hora_final );
-            // dd($vari ." y la segunda es ". $vari2);
+
             if(
                 ($date->hora_inicial >= $hora_inicial && $date->hora_inicial <= $hora_final) == false && 
                 ($date->hora_final >= $hora_inicial && $date->hora_final <= $hora_final ) == false  ){
@@ -41,18 +43,6 @@ class AgendaController extends Controller
 
       }
     
-
-
-        // $agenda = Agenda::select("*")
-        // ->whereDate('fecha', $fecha)
-        // ->whereBetween('hora_inicial', [$hora_inicial, $hora_final])
-        // ->orwhereBetween('hora_final', [$hora_inicial, $hora_final])
-        // ->first();
-        // return $agenda == null ? true : false;
-
-        
-
-
     }
     public function listar(){
         $agenda = Agenda::all();
