@@ -1,6 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="col-8">
+  @if (count($errors) > 0)
+      <div class="alert alert-danger">
+          <ul>
+              @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+              @endforeach
+          </ul>
+      </div>
+  @endif
+</div>
 <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -29,8 +40,8 @@
 
                   <div class="form-group">
                     <label for="imagen">URL Imagen</label>
-                    <input required type="text" name="imagen" class="form-control" id="file" value="{{ $producto->imagen}}">
-                    <input type="file" accept="image/*" name="file" class="form-control" id="file" value="{{ $producto->imagen}}">
+                    {{-- <input required type="text" name="imagen" class="form-control" id="file" value="{{ $producto->imagen}}"> --}}
+                    <input  type="file" accept="image/*" src="" name="file" class="form-control" id="file">
                   </div>
 
                   
@@ -47,4 +58,10 @@
             </div>
         </div>
     </div>
+
+    <script>
+      
+
+        // $("#miImagen").attr('src', 'miruta/' + td[4].innerText)
+    </script>
 @endsection
