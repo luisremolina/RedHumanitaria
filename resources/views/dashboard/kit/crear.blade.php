@@ -20,17 +20,17 @@
                 
                 <div class="form-group">
                   <label for="nombre_kit">Nombre kit</label>
-                  <input required type="text" name="name" class="form-control" id="nombre_kit" placeholder="Nombre kit">
+                  <input required type="text" name="name" class="form-control" maxlength="30" id="nombre_kit" placeholder="Nombre kit">
                 </div>
 
                 <div class="form-group">
                   <label for="elementos_kit">Elementos del kit</label>
-                  <textarea required name="elementos_kit" class="form-control" id="elementos_kit" cols="30" rows="3" placeholder="Elementos del kit"></textarea>
+                  <textarea required name="elementos_kit" class="form-control" id="elementos_kit" cols="30" rows="3" maxlength="150" placeholder="Elementos del kit"></textarea>
                 </div>
                
                 <div class="form-group">
                   <label for="descripcion">Descripcion</label>
-                  <textarea required class="form-control" name="descripcion"  id="descripcion" placeholder="Descripcion del kit" cols="30" rows="5"></textarea>
+                  <textarea required class="form-control" name="descripcion"  id="descripcion" placeholder="Descripcion del kit" cols="30" rows="5" maxlength="150"></textarea>
                 </div>
                 
                 <div class="form-group">

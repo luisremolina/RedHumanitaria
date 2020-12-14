@@ -19,22 +19,22 @@
                 @csrf
                 <div class="form-group">
                   <label  for="nombre_producto">Nombre producto</label>
-                <input required type="text" name="nombre_producto" class="form-control" id="nombre_producto" value="{{ $producto->nombre}}">
+                <input required type="text" name="nombre_producto" class="form-control" maxlength="30" id="nombre_producto" value="{{ $producto->nombre}}">
                 </div>
                 <div class="form-group">
                   <label for="stock"> Stock </label>
-                  <input required type="number" name="stock" class="form-control" id="stock" value="{{ $producto->stock}}">
+                  <input required type="number" name="stock" class="form-control" id="stock" min="0" max="10000" value="{{ $producto->stock}}">
                 </div>
                 <div class="form-group">
                   <label for="precio">Precio</label>
-                  <input required type="number" name="precio" class="form-control" id="precio" value="{{ $producto->precioActual}}">
+                  <input required type="number" name="precio" class="form-control" id="precio" min="1" max="100000"value="{{ $producto->precioActual}}">
                 </div>
                 <div class="form-group">
-                  <label for="descripcion_corta">Descripcion corta</label>
+                  <label for="descripcion_corta">Especificaciones</label>
                   <textarea class="form-control" name="descripcion_corta"  id="descripcion_corta" cols="30" rows="5">{{ $producto->descripcionCorta}}</textarea>
                 </div>
                 <div class="form-group">
-                    <label for="descripcion_larga">Descripcion larga</label>
+                    <label for="descripcion_larga">Características</label>
                     <textarea class="form-control" name="descripcion_larga"  id="descripcion_larga" cols="30" rows="5">{{ $producto->descripcionLarga}}</textarea>
                   </div>
 
@@ -61,7 +61,5 @@
 
     <script>
       
-
-        // $("#miImagen").attr('src', 'miruta/' + td[4].innerText)
     </script>
 @endsection

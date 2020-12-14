@@ -15,11 +15,11 @@
         </div>
         <div class="form-group">
           <label for="Entrada">Entrada</label>
-          <input name="entrada" type="number" min="0" required class="form-control" id="Entrada" value="0">
+          <input name="entrada" type="number" min="0" max="9999999" maxlength="7" required class="form-control" id="Entrada" value="0">
         </div>
         <div class="form-group">
           <label for="salida">Salida</label>
-          <input name="salida" type="number" min="0" required class="form-control" id="salida" value="0">
+          <input name="salida" type="number" min="0"  max="9999999" maxlength="7" required class="form-control" id="salida" value="0">
         </div>
         <div class="form-group">
           <button type="submit" class="btn btn-primary">Actualizar</button>

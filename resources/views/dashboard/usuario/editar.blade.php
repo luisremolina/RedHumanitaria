@@ -16,7 +16,7 @@
                         <label for="dni" class="col-md-4 col-form-label text-md-right">{{ __('Dni') }}</label>
 
                         <div class="col-md-6">
-                            <input id="dni" type="text" class="form-control" name="dni" value="{{ $usuario->dni}}" required>
+                            <input id="dni" type="text" min="0" maxlength="10" class="form-control" name="dni" value="{{ $usuario->dni}}" required>
                         </div>
                     </div>
                       <div class="form-group row">
@@ -42,14 +42,14 @@
                           <label for="telefono" class="col-md-4 col-form-label text-md-right">{{ __('Telefono') }}</label>
 
                           <div class="col-md-6">
-                              <input id="telefono" type="number" class="form-control" name="telefono" value="{{$usuario->telefono}}" required>
+                              <input id="telefono" type="number"  class="form-control" min="0" maxlength="10"  name="telefono" value="{{$usuario->telefono}}" required>
                           </div>
                       </div>
                       <div class="form-group row">
                           <label for="edad" class="col-md-4 col-form-label text-md-right">{{ __('Edad') }}</label>
 
                           <div class="col-md-6">
-                              <input id="edad" type="number" class="form-control" name="edad" value="{{$usuario->edad}}" required >
+                              <input id="edad" type="number" class="form-control" min="0" maxlength="3" max="130" name="edad" value="{{$usuario->edad}}" required >
                           </div>
                       </div>
                       <div class="form-group row">
