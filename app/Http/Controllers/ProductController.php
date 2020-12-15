@@ -18,10 +18,7 @@ class ProductController extends Controller
     {
         return view('dashboard.productos.registrar');
     }
-    public function storage()
-    {
-        return view('dashboard.productos.subirimages');
-    }
+   
 
     // public function store(Request $request)
     // {
@@ -40,7 +37,6 @@ class ProductController extends Controller
     public function index2()
     {
         $cart = session()->get('cart');
-        // dd(count($cart));
         $productos = Product::all();
         return view('dashboard.productos', compact('productos', 'cart'));
     }
@@ -154,8 +150,10 @@ class ProductController extends Controller
 
         ]);
 // hasta el momento no funciona el required. revisarlo
-
-      
+// C:\laragon\www\RedHumanitaria-1 copiaderama2\public\storage\imagenes\bOAKBtPuIV0mmlz7UH5fG4qzhDlYTWsmjKpKzQ3m.jpg
+// storage\app\storage\app\public\imagenes\eXYiR8PGorbL8pQ6ufslkLCkM81LVdmv6LRIKhnb.jpg
+// C:\laragon\www\RedHumanitaria-1 copiaderama2\storage\app\public\imagenes\5g6D1O7rA8plAldGVZMpbidZLtmc8YYKw83zSf87.png
+        
         $images = $request->file('file')->store('public/imagenes');
         $url = Storage::url($images);
         $producto = new Product;

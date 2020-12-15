@@ -42,7 +42,8 @@
                   </div>
                   <div class="form-group">
                     <label for="file">URL Imagen</label>
-                    <input required type="file" name="file" class="form-control" id="file" accept="image/*" >
+                    <input required type="file" name="file" class="form-control" id="file" accept="image/*" encode="jpeg"> 
+                    {{-- accept = 'image/jpeg , image/jpg, image/gif, image/png --}}
                     @error('file')
                 <small>{{$message}}</small>
                     @enderror
@@ -51,7 +52,7 @@
                   <button type="submit" class="btn btn-primary">Guardar</button>
                   <a href=" {{ route('producto.registrados' ) }} " class="btn btn-secondary">Ver Registrados</a>
                 </div>
-              </form>
+            </form>
               
             </div>
         </div>
