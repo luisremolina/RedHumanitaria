@@ -154,7 +154,7 @@ class ProductController extends Controller
 // storage\app\storage\app\public\imagenes\eXYiR8PGorbL8pQ6ufslkLCkM81LVdmv6LRIKhnb.jpg
 // C:\laragon\www\RedHumanitaria-1 copiaderama2\storage\app\public\imagenes\5g6D1O7rA8plAldGVZMpbidZLtmc8YYKw83zSf87.png
         
-        $images = $request->file('file')->store('public/imagenes');
+        $images = $request->file('file')->store('storage/imagenes');
         $url = Storage::url($images);
         $producto = new Product;
         $producto->nombre = $request->nombre_producto;
