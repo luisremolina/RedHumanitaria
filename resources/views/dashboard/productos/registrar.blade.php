@@ -45,7 +45,7 @@
                     <input required type="file" name="file" class="form-control" id="file" accept="image/*" encode="jpeg"> 
                     {{-- accept = 'image/jpeg , image/jpg, image/gif, image/png --}}
                     @error('file')
-                <small>{{$message}}</small>
+                   <small>{{$message}}</small>
                     @enderror
                   </div>
                 <div class="form-group">
